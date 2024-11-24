@@ -18,12 +18,12 @@ const Users = db.define("users",{
     },
 
     nomorHP : {
-        type : DataTypes.BIGINT,
+        type : DataTypes.STRING,
         allowNull : false
     },
     
     nomorRek : {
-        type : DataTypes.BIGINT,
+        type : DataTypes.STRING,
         allowNull : false
     },
 

@@ -18,12 +18,12 @@ const Admin = db.define("admin",{
     },
 
     nomorHP : {
-        type : DataTypes.BIGINT,
+        type : DataTypes.STRING,
         allowNull : false
     },
     
     nomorRek : {
-        type : DataTypes.BIGINT,
+        type : DataTypes.STRING,
         allowNull : false
     },
     
@@ -34,7 +34,7 @@ const Admin = db.define("admin",{
     
     kodeTokoAdm : {
         type : DataTypes.STRING,
-        allowNull : true,
+        allowNull : false,
     },
 
     password : {

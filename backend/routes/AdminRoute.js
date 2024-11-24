@@ -10,14 +10,11 @@ const upload = multer({
     limits : {fileSize : 10 * 1024 * 1024}
 });
 
-// router.get("/admin",AdminOnly,getAdmins);
 router.get("/admin",getAdmins);
-// router.get("/admin/:id",AdminOnly,getAdminById);
 router.get("/admin/:id",getAdminById);
 router.post("/admin",createAdmin);
-// router.patch("/admin/:id",AdminOnly,updateAdmin);
-router.patch("/admin/:id",upload.single("image"),updateAdmin);
-router.delete("/admin/:id",AdminOnly,deleteAdmin);
+router.patch("/admin/:id",AdminOnly,upload.single("ProfilePicture"),updateAdmin);
+router.delete("/admin/:id",deleteAdmin);
 
 export default router;
 
