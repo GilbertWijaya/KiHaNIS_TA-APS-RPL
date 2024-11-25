@@ -25,7 +25,31 @@ export const AdminOnly = async (req,res,next) => {
 // verify admin
 export const verifyAdmin = async (req,res,next) => {
 
+    const refreshToken = req.cookies.refreshToken;
 
+    if (!refreshToken) {
+        return res.status(401).json({message : "Login terlebih dahulu"});
+    }
+
+    const admin = await Admin.findOne({
+        where : {
+            refreshToken : refreshToken
+        }
+    });
+
+    if (!admin) {
+        return res.status(401).json({message : "Admin belum login"});
+    }
+
+    if (!admin && admin.role !== "admins") {
+        return res.status(403).json({message:"Anda Tidak Punya Hak Akses Admin"});
+    }
+
+    req.adminId = admin.id;
+    req.adminEmail = admin.email;
+    req.kodeTokoAdm = admin.kodeTokoAdm;
+
+    next();
 
 }
 
