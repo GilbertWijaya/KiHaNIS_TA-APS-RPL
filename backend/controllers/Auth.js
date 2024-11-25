@@ -1,5 +1,6 @@
 import Admin from "../models/AdminModel.js";
 import Users from "../models/UserModel.js";
+import Sales from "../models/SalesModel.js";
 import jwt from "jsonwebtoken";
 
 // login
@@ -18,11 +19,17 @@ export const login = async(req,res) => {
             }
         });
 
-        if (!admin && !user) {
+        const sales = await Sales.findOne({
+            where : {
+                email : req.body.email
+            }
+        })
+
+        if (!admin && !user && !sales) {
             return res.status(404).json({message:"Email Tidak Ditemukan"});
         }
 
-        if (!user && admin) {
+        if (!user && admin && !sales) {
             
             const isMatch = req.body.password && admin.password;
 
@@ -69,7 +76,7 @@ export const login = async(req,res) => {
 
         }
 
-        if (user && !admin) {
+        if (user && !admin && !sales) {
         
             const isMatch = req.body.password && user.password;
 
@@ -115,6 +122,55 @@ export const login = async(req,res) => {
             });
 
         }
+
+        if (!user && !admin && sales) {
+        
+            const isMatch = req.body.password && sales.password;
+
+            if (!isMatch) {
+                return res.status(401).json({message:"Password Salah"});
+            }
+
+            const name = sales.name;
+            const email = sales.email;
+            const kodeTokoAdm = sales.kodeTokoAdm;
+            const role = sales.role;
+
+            req.session.userEmail = sales.email;
+            req.session.userData = `${name}${sales.id}${kodeTokoAdm}`;
+
+            const accessToken = jwt.sign({name,email,role,kodeTokoAdm},process.env.ACCESS_TOKEN_SECRET,{
+                expiresIn : "1d"
+            });
+
+            const refreshToken = jwt.sign({name,email,role,kodeTokoAdm},process.env.REFRESH_TOKEN_SECRET,{
+                expiresIn : "1d"
+            });
+
+            await Sales.update({refreshToken},{
+                where : {
+                    email : sales.email
+                }
+            });
+
+            res.cookie('refreshToken',refreshToken,{
+                httpOnly : true,
+                maxAge : 24 * 60 * 60 * 1000
+            });
+
+            res.status(200).json({
+                message: "Login berhasil",
+                sales : {
+                    name,
+                    email,
+                    kodeTokoAdm,
+                    role
+                },
+                accessToken
+            });
+
+        }
+        
     }catch (e) {
         res.status(500).json({message:`Server Error${e.message}`});
     }
@@ -142,11 +198,17 @@ export const me = async(req,res) => {
             }
         });
 
-        if (!admin && !user) {
+        const sales = await Sales.findOne({
+            where : {
+                email : req.session.userEmail
+            }
+        });
+
+        if (!admin && !user && !sales) {
             return res.status(404).json({message:"Email Tidak Ditemukan"});
         }
 
-        if (!user && admin) {
+        if (!user && admin && !sales) {
             
             res.status(200).json({
                 message: "Login berhasil",
@@ -155,7 +217,7 @@ export const me = async(req,res) => {
 
         }
 
-        if (user && !admin) {
+        if (user && !admin && !sales) {
         
             res.status(200).json({
                 message: "Login berhasil",
@@ -163,6 +225,16 @@ export const me = async(req,res) => {
             });
 
         }
+
+        if (!user && !admin && sales) {
+        
+            res.status(200).json({
+                message: "Login berhasil",
+                sales
+            });
+
+        }
+
     }catch (e) {
         res.status(500).json({message:`Server Error${e.message}`});
     }
@@ -189,12 +261,17 @@ export const logout = async(req,res) => {
         }
     });
 
+    const sales = await Sales.findOne({
+        where : {
+            refreshToken
+        }
+    });
 
-    if (!user && !admin) {
+    if (!user && !admin && !sales) {
         return res.status(404).json({message:"User Tidak Ditemukan"});
     }
 
-    if(user && !admin){
+    if(user && !admin && !sales) {
         await Users.update({refreshToken: null},{
             where : {
                 email : req.session.userEmail
@@ -202,8 +279,16 @@ export const logout = async(req,res) => {
         });
     }
 
-    if(!user && admin){
+    if(!user && admin && !sales){
         await Admin.update({refreshToken: null},{
+            where : {
+                email : req.session.userEmail
+            }
+        });
+    }
+
+    if(!user && !admin && sales){
+        await Sales.update({refreshToken: null},{
             where : {
                 email : req.session.userEmail
             }
