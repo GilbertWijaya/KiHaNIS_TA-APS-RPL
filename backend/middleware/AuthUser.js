@@ -1,5 +1,6 @@
 import Admin from "../models/AdminModel.js";
 import Users from "../models/UserModel.js";
+import Sales from "../models/SalesModel.js";
 
 // admin only
 export const AdminOnly = async (req,res,next) => {
@@ -66,13 +67,27 @@ export const verifyUser = async (req,res,next) => {
         }
     });
 
-    if (!user) {
+    const sales = await Sales.findOne({
+        where : {
+            email : req.session.userEmail
+        }
+    });
+
+    if (!user && !sales) {
         return res.status(404).json({message : "User Tidak Ditemukan"});
     }
 
-    req.userId = user.id;
-    req.userEmail = user.email;
+    if (!sales) {
+        req.userId = user.id;
+        req.userEmail = user.email;
+    }
 
+    if (!user) {
+        req.userId = sales.id;
+        req.userEmail = sales.email;
+    }
+
+    
     next();
 }
 

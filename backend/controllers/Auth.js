@@ -2,6 +2,7 @@ import Admin from "../models/AdminModel.js";
 import Users from "../models/UserModel.js";
 import Sales from "../models/SalesModel.js";
 import jwt from "jsonwebtoken";
+import { Op } from "sequelize";
 
 // login
 export const login = async(req,res) => {
@@ -43,6 +44,8 @@ export const login = async(req,res) => {
             const role = admin.role;
 
             req.session.userEmail = admin.email;
+            req.session.userId = admin.id;
+            req.session.kodeTokoAdm = admin.kodeTokoAdm;
 
             const accessToken = jwt.sign({name,email,kodeTokoAdm,role},process.env.ACCESS_TOKEN_SECRET,{
                 expiresIn : "1d"
@@ -88,8 +91,18 @@ export const login = async(req,res) => {
             const email = user.email;
             const role = user.role;
 
+            const adminRes = await Admin.findOne({
+                where : {
+                    kodeTokoAdm : req.body.kodeTokoAdm
+                }
+            });
+
+            const kodeTokoAdm = adminRes.kodeTokoAdm;
+
             req.session.userEmail = user.email;
             req.session.userData = `${name}${user.id}`;
+            req.session.userId = user.id;
+            req.session.kodeTokoAdm = kodeTokoAdm;
 
             const accessToken = jwt.sign({name,email,role},process.env.ACCESS_TOKEN_SECRET,{
                 expiresIn : "1d"
@@ -138,6 +151,8 @@ export const login = async(req,res) => {
 
             req.session.userEmail = sales.email;
             req.session.userData = `${name}${sales.id}${kodeTokoAdm}`;
+            req.session.salesEmail = email;
+            req.session.userId = sales.id;
 
             const accessToken = jwt.sign({name,email,role,kodeTokoAdm},process.env.ACCESS_TOKEN_SECRET,{
                 expiresIn : "1d"

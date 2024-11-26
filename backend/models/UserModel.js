@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
+import Nota from "./NotaModel.js";
 
 const {DataTypes} = Sequelize;
 
@@ -73,5 +74,8 @@ const Users = db.define("users",{
 }, {
     freezeTableName : true
 });
+
+Users.hasMany(Nota);
+Nota.belongsTo(Users,{foreignKey : "userId"});
 
 export default Users;
