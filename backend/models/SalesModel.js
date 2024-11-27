@@ -85,8 +85,6 @@ const Sales = db.define("sales",{
     freezeTableName : true
 });
 
-// Sales.hasMany(Nota);
-// Nota.belongsTo(Sales,{foreignKey : "saleId"});
 Admin.hasMany(Sales);
 Sales.belongsTo(Admin,{foreignKey : "adminId"});
 

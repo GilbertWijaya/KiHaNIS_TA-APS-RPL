@@ -1,6 +1,6 @@
 .env
 node_modules
 index.js
-.rest
+*.rest
 package.json
 package-lock.json

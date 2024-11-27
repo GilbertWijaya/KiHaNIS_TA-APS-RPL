@@ -1,6 +1,6 @@
 import Admin from "../models/AdminModel.js";
 
-// create user
+// create admin
 export const createAdmin = async(req,res) =>{
     
     const {name,nomorHP,password,email,nomorRek} = req.body;
@@ -26,7 +26,7 @@ export const createAdmin = async(req,res) =>{
 
 }
 
-// get user
+// get admin
 export const getAdmins = async(req,res) =>{
 
     try {
@@ -41,7 +41,7 @@ export const getAdmins = async(req,res) =>{
 
 }
 
-// get user by id
+// get admin by id
 export const getAdminById = async(req,res) =>{
 
     try {
@@ -60,7 +60,7 @@ export const getAdminById = async(req,res) =>{
 
 }
 
-// update user
+// update admin
 export const updateAdmin = async(req,res) =>{
         
     const response = await Admin.findOne({
@@ -113,7 +113,7 @@ export const updateAdmin = async(req,res) =>{
 
 }
 
-// delete user
+// delete admin
 export const deleteAdmin = async(req,res) =>{
 
     const admin = await Admin.findOne({

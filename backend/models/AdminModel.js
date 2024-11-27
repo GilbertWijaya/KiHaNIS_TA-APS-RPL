@@ -80,7 +80,5 @@ const Admin = db.define("admin",{
     freezeTableName : true
 });
 
-// Admin.hasMany(Nota);
-// Nota.belongsTo(Admin,{foreignKey : "adminId"});
 
 export default Admin;

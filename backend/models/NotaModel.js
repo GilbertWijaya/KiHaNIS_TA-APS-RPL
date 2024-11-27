@@ -57,8 +57,6 @@ const Nota = db.define("nota",{
     freezeTableName : true
 });
 
-// Users.hasMany(Nota);
-// Sales.hasMany(Nota);
 Nota.belongsTo(Admin,{foreignKey : "adminId"});
 
 // diedit

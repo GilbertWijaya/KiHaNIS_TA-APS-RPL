@@ -1,6 +1,6 @@
 import Sales from "../models/SalesModel.js";
 
-// create user
+// create sales
 export const createSales = async(req,res) =>{
 
     const {name,nomorHP,password,email,nomorRek} = req.body;
@@ -27,7 +27,7 @@ export const createSales = async(req,res) =>{
     
 }
 
-// get user
+// get sales
 export const getSales = async(req,res) =>{
 
     try {
@@ -42,7 +42,7 @@ export const getSales = async(req,res) =>{
 
 }
 
-// get user by id
+// get sales by id
 export const getSalesById = async(req,res) =>{
 
     try {
@@ -61,7 +61,7 @@ export const getSalesById = async(req,res) =>{
 
 }
 
-// update user
+// update sales
 export const updateSales = async(req,res) =>{
 
     const response = await Sales.findOne({
@@ -114,7 +114,7 @@ export const updateSales = async(req,res) =>{
 
 }
 
-// delete user
+// delete sales
 export const deleteSales = async(req,res) =>{
 
     const sales = await Sales.findOne({

@@ -2,7 +2,7 @@ import Products from "../models/ProductModel.js";
 import Admin from "../models/AdminModel.js";
 import { Op } from "sequelize";
 
-// create user
+// create product
 export const createProduct = async(req,res) =>{
     
     const {namaBarang,hargaBarang,kodeBarang,keterangan} = req.body;
@@ -38,7 +38,7 @@ export const createProduct = async(req,res) =>{
 
 }
 
-// get user
+// get product
 export const getProducts = async(req,res) =>{
 
     try {
@@ -53,7 +53,7 @@ export const getProducts = async(req,res) =>{
 
 }
 
-// get user by id
+// get product by id
 export const getProductById = async(req,res) =>{
 
     try {
@@ -72,7 +72,7 @@ export const getProductById = async(req,res) =>{
 
 }
 
-// update user
+// update product
 export const updateProduct = async(req,res) =>{
 
     const response = await Products.findOne({
@@ -120,7 +120,7 @@ export const updateProduct = async(req,res) =>{
 
 }
 
-// delete user
+// delete product
 export const deleteProduct = async(req,res) =>{
 
     const response = await Products.findOne({
