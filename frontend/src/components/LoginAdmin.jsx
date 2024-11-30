@@ -46,8 +46,8 @@ function LoginAdmin() {
                     <p className="text-white link2-loginadmin"> <a className="link2-2-loginadmin" href="">lupa password?</a> </p>
 
                     <div className="loginlain-loginadmin">
-                        <p className="text-white link3-loginadmin"> Masuk Sebagai <a className="link2-3-loginadmin" href="">Sales</a> </p>
-                        <p className="text-white link3-loginadmin"> Masuk Sebagai <a className="link2-3-loginadmin" href="">User</a> </p>
+                        <p className="text-white link3-loginadmin"> Masuk Sebagai <Link className="link2-3-loginadmin" to="/login/sales">Sales</Link> </p>
+                        <p className="text-white link3-loginadmin"> Masuk Sebagai <Link className="link2-3-loginadmin" to="/login/user">User</Link> </p>
                     </div>
 
                 </div>

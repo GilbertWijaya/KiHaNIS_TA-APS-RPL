@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 
-import "../style/DaftarUser.css"
+import "../style/DaftarUser.css";
+import { Link } from "react-router-dom";
 
 const DaftarUser = () => {
     return (
@@ -11,12 +13,7 @@ const DaftarUser = () => {
                 <div className="formcontainer-daftaruser">
                     <form action="">
 
-                        <div className="content">
-
-                            <div className="navcontainer-daftaruser">
-                                <p>SELAMAT DATANG</p>
-                                <p>KiHaNIS(Kita Hebat bisNIS)</p>
-                            </div>
+                        <div className="content-daftaruser">
 
                             <h1 className="keterangan-daftaruser">DAFTAR USER</h1>
 
@@ -66,12 +63,12 @@ const DaftarUser = () => {
                                 <button type="submit" className="btn-submit-daftaruser">Login</button>
                             </div>
 
-                            <p className="link1-daftaruser">Belum Punya Akun? <a className="link" href="">DAFTAR</a> </p>
-                            <p className="link2-daftaruser"> <a className="link2" href="">lupa password?</a> </p>
+                            <p className="link1-daftaruser">Sudah Punya Akun? <Link className="link" to="/login/user">LOGIN</Link> </p>
+                            <p className="link2-daftaruser"> <Link className="link2" to="">lupa password?</Link> </p>
 
                             <div className="loginlain-daftaruser">
-                                <p className=" link3-daftaruser"> Masuk Sebagai <a className="link" href="">Admin</a> </p>
-                                <p className=" link3-daftaruser"> Masuk Sebagai <a className="link" href="">Sales</a> </p>
+                                <p className=" link3-daftaruser"> Masuk Sebagai <Link className="link" to="/login/admin">Admin</Link> </p>
+                                <p className=" link3-daftaruser"> Masuk Sebagai <Link className="link" to="/login/sales">Sales</Link> </p>
                             </div>
 
                         </div>

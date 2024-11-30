@@ -68,11 +68,11 @@ function DaftarAdmin() {
 
                     {/* <p className="text-white link1">Sudah Punya Akun? <a className="link" href="">LOGIN</a> </p> */}
                     <p className="text-white link1-daftaradmin">Sudah Punya Akun? <Link className="link-daftaradmin" to="/login/admin">LOGIN</Link> </p>
-                    <p className="text-white link2-daftaradmin"> <a className="link2-2-daftaradmin" href="">lupa password?</a> </p>
+                    <p className="text-white link2-daftaradmin"> <Link className="link2-2-daftaradmin" to="">lupa password?</Link> </p>
 
                     <div className="loginlain">
-                        <p className="text-white link3-daftaradmin"> Masuk Sebagai <a className="link2-3-daftaradmin" href="">Sales</a> </p>
-                        <p className="text-white link3-daftaradmin"> Masuk Sebagai <a className="link2-3-daftaradmin" href="">User</a> </p>
+                        <p className="text-white link3-daftaradmin"> Masuk Sebagai <Link className="link2-3-daftaradmin" to="/login/sales">Sales</Link> </p>
+                        <p className="text-white link3-daftaradmin"> Masuk Sebagai <Link className="link2-3-daftaradmin" to="/login/user">User</Link> </p>
                     </div>
 
                 </div>

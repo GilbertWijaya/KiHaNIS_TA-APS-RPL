@@ -9,11 +9,7 @@
     flex-direction: row;
     height: 100svh;
     flex-wrap: wrap;
-}
-
-.navcontainer-daftaruser{
-    display: none;
-}
+}       
 
 .formcontainer-daftaruser{
     display: flex;
@@ -28,7 +24,7 @@
     overflow: scroll;
 }
 
-.content{
+.content-daftaruser{
     /* background-color: aqua; */
     display: flex;
     flex-direction: column;

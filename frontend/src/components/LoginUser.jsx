@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 
-import "../style/LoginUser.css"
+import "../style/LoginUser.css";
+import { Link } from "react-router-dom";
 
 const LoginUser = () => {
     return (
@@ -11,12 +13,7 @@ const LoginUser = () => {
                 <div className="formcontainer-loginuser">
                     <form action="">
 
-                        <div className="content">
-
-                            <div className="navcontainer-loginuser">
-                                <p>SELAMAT DATANG</p>
-                                <p>KiHaNIS(Kita Hebat bisNIS)</p>
-                            </div>
+                        <div className="content-loginuser">
 
                             <h1 className="keterangan-loginuser">LOGIN USER</h1>
 
@@ -45,12 +42,12 @@ const LoginUser = () => {
                                 <button type="submit" className="btn-submit-loginuser">Login</button>
                             </div>
 
-                            <p className="link1-loginuser">Belum Punya Akun? <a className="link" href="">DAFTAR</a> </p>
-                            <p className="link2-loginuser"> <a className="link2" href="">lupa password?</a> </p>
+                            <p className="link1-loginuser">Belum Punya Akun? <Link className="link" to="/daftar/user">DAFTAR</Link> </p>
+                            <p className="link2-loginuser"> <Link className="link2" to="">lupa password?</Link> </p>
 
                             <div className="loginlain-loginuser">
-                                <p className=" link3-loginuser"> Masuk Sebagai <a className="link" href="">Admin</a> </p>
-                                <p className=" link3-loginuser"> Masuk Sebagai <a className="link" href="">Sales</a> </p>
+                                <p className=" link3-loginuser"> Masuk Sebagai <Link className="link" to="/login/admin">Admin</Link> </p>
+                                <p className=" link3-loginuser"> Masuk Sebagai <Link className="link" to="/login/sales">Sales</Link> </p>
                             </div>
 
                         </div>

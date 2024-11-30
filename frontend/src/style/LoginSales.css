@@ -1,0 +1,157 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container1-loginsales{
+    display: flex;
+    flex-direction: column;
+    height: 100svh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-loginsales{
+    background-color: rgba(6, 56, 82, 1);
+    height: 50%;
+    width: 100vw;
+}
+
+.footer-loginsales{
+    background-color: rgba(66, 110, 134, 1);
+    height: 50%;
+    width: 100vw;
+}
+
+.content-loginsales{
+    background-color: rgba(10, 7, 33, 1);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 80%;
+    width: 30%;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.keterangan-loginsales{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.field-loginsales{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.label-loginsales{
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.input-loginsales{
+    width: 20rem;
+    height: 2rem;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+.input-loginsales:focus{
+    outline: none;
+}
+
+.btn-submit-loginsales{
+    background-color: rgba(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+}
+
+.link-loginsales{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.link1-loginsales{
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.link2-loginsales{
+    font-size: 12px;;
+}
+
+.link2-2-loginsales{
+    color: white;
+    text-decoration: none;
+}
+
+.link3-loginsales{
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.link2-3-loginsales{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.loginlain-loginsales{
+    margin-top: -10px;
+}
+
+@media screen and (min-width: 992px) {
+    
+    .content-loginsales{
+        width: 40%;
+    }
+
+}
+
+@media screen and (max-width: 799px) {
+    
+    .content-loginsales{
+        width: 50%;
+    }
+
+}
+
+
+@media screen and (max-width: 662px) {
+    
+    .content-loginsales{
+        width: 70%;
+    }
+
+}
+@media screen and (max-width: 475px) {
+    
+    .content-loginsales{
+        width: 100%;
+    }
+
+}
+
+
+
+
