@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-loginuser{
+    display: flex;
+    flex-direction: row;
+    height: 100svh;
+    flex-wrap: wrap;
+}
+
+.navcontainer-loginuser{
+    display: none;
+}
+
+.formcontainer-loginuser{
+    display: flex;
+    flex-direction: column;
+    height: 100svh;
+    width: 50%;
+    padding: 20px;
+    background-color: rgba(221, 222, 222, 0.93);
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0% 0, 95% 0, 100% 100%, 0% 100%);
+    
+}
+
+.content{
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.keterangan-loginuser{
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.label-loginuser{
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.input-loginuser{
+    width: 20rem;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+    padding-left: 10px;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.input-loginuser:focus{
+    outline: none;
+}
+
+.uicontainer-loginuser{
+    display: flex;
+    flex-direction: column;
+    height: 100svh;
+    width: 50%;
+    padding: 20px;
+    background-color: rgba(110, 181, 192, 1);
+    align-items: center;
+    clip-path: polygon(0% 0, 
+    100% 0%, 
+    100% 100%,  
+    5% 100%);
+}
+
+.btn-submit-loginuser{
+    width: 20rem;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(0, 108, 132, 1);
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.link1-loginuser{
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.link{
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.link2{
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .formcontainer-loginuser{
+        width: 100%;
+        clip-path: none;
+    }
+
+    .keterangan-loginuser{
+        text-align: center;
+    }
+
+    .uicontainer-loginuser{
+        display: none;
+    }
+
+}
