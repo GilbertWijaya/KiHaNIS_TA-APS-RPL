@@ -1,18 +1,18 @@
-.keterangan-dashboardadmin{
+.keterangan-dashboardpembelianadmin{
     font-weight: bold;
     font-size: 25px;
 }
 
-.data-dashboardadmin{
+.data-dashboardpembelianadmin{
     display: flex;
     flex-direction: column;
 }
 
-.keterangan-dataadmin{
+.keterangan-dashboardpembelianadmin-content{
     margin-top: 1rem;
 }
 
-.datasales-admin{
+.dashboardpembelianadmin-admin{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,37 +23,34 @@
     margin-bottom: 1rem;
 }
 
-.action-datasales-admin{
+.action-dashboardpembelianadmin-admin{
     display: flex;
     gap: 20px;
 }
 
-.action-datasales-admin a{
+.action-dashboardpembelianadmin-admin a{
     text-decoration: none;
     font-weight: bold;
 }
 
-.btn-edit{
+.img-barang-admin{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    /* border-radius: 50%; */
+}
+
+.btn-detail{
     background-color: #3f51b5;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
 }
 
-.btn-delete{
+.btn-verif{
     background-color: #f44336;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
 
-}
-
-.btn-tambah-datasales{
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
 }

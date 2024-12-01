@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
 
 // eslint-disable-next-line no-unused-vars
 import TemplateAdmin from "./TemplateAdmin.jsx";
 import "../style/DataSalesAdmin.css"
+import { Link } from "react-router-dom";
 
 const DataSalesAdmin = () => {
     return (
@@ -20,8 +22,8 @@ const DataSalesAdmin = () => {
                             <p>Nama Sales</p>
                             <p>Email Sales</p>
                             <div className="action-datasales-admin">
-                                <a className="btn-edit">Edit</a>
-                                <a className="btn-delete">Delete</a>
+                                <Link to="/admin/editdatasales/:id" className="btn-edit">Edit</Link>
+                                <Link to="/admin/editdatasales/:id" className="btn-delete">Delete</Link>
                             </div>
                         </div>
                         
@@ -29,9 +31,13 @@ const DataSalesAdmin = () => {
                             <p>Nama Sales</p>
                             <p>Email Sales</p>
                             <div className="action-datasales-admin">
-                                <a className="btn-edit">Edit</a>
-                                <a className="btn-delete">Delete</a>
+                                <Link to="/admin/editdatasales/:id" className="btn-edit">Edit</Link>
+                                <Link to="/admin/editdatasales/:id" className="btn-delete">Delete</Link>
                             </div>
+                        </div>
+
+                        <div className="control">
+                            {/* <Link className="btn-tambah-datasales" to="">Tambah Data Sales</Link> */}
                         </div>
 
                     </div>

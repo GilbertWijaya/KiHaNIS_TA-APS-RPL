@@ -7,14 +7,16 @@ import LoginUser from "./components/LoginUser.jsx";
 import DaftarUser from "./components/DaftarUser.jsx";
 import LoginSales from "./components/LoginSales.jsx";
 import DaftarSales from "./components/DaftarSales.jsx";
-import Sidebar from "./components/Sidebar.jsx";
-import Footer from "./components/Footer.jsx";
-import Testing from "./pages/Testing.jsx";
-import TemplateAdmin from "./pages/TemplateAdmin.jsx";
 import DashboardAdmin from "./pages/DashboardAdmin.jsx";
 import DataSalesAdmin from "./pages/DataSalesAdmin.jsx";
 import EditDataSales from "./pages/EditDataSales.jsx";
 import TambahDataSales from "./pages/TambahDataSales.jsx";
+import DataBarangAdmin from "./pages/DataBarangAdmin.jsx";
+import TambahDataBarang from "./pages/TambahDataBarang.jsx";
+import EditDataBarang from "./pages/EditDataBarang.jsx";
+import DataPembelianAdmin from "./pages/DataPembelianAdmin.jsx";
+import DetailPembelianAdmin from "./pages/DetailPembelianAdmin.jsx";
+
 
 function App() {
 
@@ -25,12 +27,20 @@ function App() {
 
         <Routes>
 
-          <Route path="/" element={<TambahDataSales />} />
-
           <Route path="/login/admin" element={<LoginAdmin />} />
+          <Route path="/daftar/admin" element={<DaftarAdmin />} />
+          <Route path="/admin" element={<DashboardAdmin />} />
+          <Route path="/admin/datasalesadmin" element={<DataSalesAdmin />} />
+          <Route path="/admin/editdatasales/:id" element={<EditDataSales />} />
+          <Route path="/admin/tambahdatasales" element={<TambahDataSales />} />
+          <Route path="/admin/databarangadmin" element={<DataBarangAdmin />} />
+          <Route path="/admin/tambahdatabarang" element={<TambahDataBarang />} />
+          <Route path="/admin/editdatabarang/:id" element={<EditDataBarang />} />
+          <Route path="/admin/datapembelianadmin" element={<DataPembelianAdmin />} />
+          <Route path="/admin/detailpembelianadmin/:id" element={<DetailPembelianAdmin />} />
+
           <Route path="/login/user" element={<LoginUser />} />
           <Route path="/login/sales" element={<LoginSales />} />
-          <Route path="/daftar/admin" element={<DaftarAdmin />} />
           <Route path="/daftar/user" element={<DaftarUser />} />
           <Route path="/daftar/sales" element={<DaftarSales />} />
 
