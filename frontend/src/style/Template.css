@@ -4,28 +4,28 @@
     box-sizing: border-box;
 }
 
-.testing-content{
+.template-content{
     margin-left: 18.5rem;
     padding-top: 6rem;
     overflow-y: scroll;
     height: 2000px;
 }
 
-.button{
+/* .button{
     display: none;
-}
+} */
 
 @media screen and (max-width : 1250px) {
     
-    .sidebar{
+    .templatesidebar{
         display: none;
     }
 
-    .sidebar.open{
+    /* .sidebar.open{
         display: block;
-    }
+    } */
 
-    .testing-content{
+    .template-content{
         margin-left: 2rem;
     }
 

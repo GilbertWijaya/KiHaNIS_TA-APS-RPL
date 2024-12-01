@@ -1,0 +1,49 @@
+.keterangan-dashboardadmin{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.data-dashboardadmin{
+    display: flex;
+    flex-direction: column;
+}
+
+.keterangan-dataadmin{
+    margin-top: 1rem;
+}
+
+.datasales-admin{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(197, 197, 197);
+    width: 80%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.action-datasales-admin{
+    display: flex;
+    gap: 20px;
+}
+
+.action-datasales-admin a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-edit{
+    background-color: #3f51b5;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-delete{
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+}

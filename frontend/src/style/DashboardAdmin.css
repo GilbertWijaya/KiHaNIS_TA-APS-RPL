@@ -1,0 +1,57 @@
+.keterangan-dashboardadmin{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.data-dashboardadmin{
+    display: flex;
+    flex-direction: column;
+}
+
+.keterangan-dataadmin{
+    margin-top: 1rem;
+}
+
+.input-dashboardadmin-textarea{
+    resize: none;
+    height: 15rem;
+    width: 80%;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 16px;
+    transition: 0.3s;
+    border: none;
+}
+
+.input-dashboardadmin{
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.input-dashboardadmin:focus,.input-dashboardadmin-textarea:focus{
+    outline: none;
+}
+
+.button-dashboardadmin{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dataimg{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 2rem;
+}

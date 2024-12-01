@@ -10,6 +10,11 @@ import DaftarSales from "./components/DaftarSales.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 import Footer from "./components/Footer.jsx";
 import Testing from "./pages/Testing.jsx";
+import TemplateAdmin from "./pages/TemplateAdmin.jsx";
+import DashboardAdmin from "./pages/DashboardAdmin.jsx";
+import DataSalesAdmin from "./pages/DataSalesAdmin.jsx";
+import EditDataSales from "./pages/EditDataSales.jsx";
+import TambahDataSales from "./pages/TambahDataSales.jsx";
 
 function App() {
 
@@ -20,7 +25,7 @@ function App() {
 
         <Routes>
 
-          <Route path="/" element={<Testing />} />
+          <Route path="/" element={<TambahDataSales />} />
 
           <Route path="/login/admin" element={<LoginAdmin />} />
           <Route path="/login/user" element={<LoginUser />} />

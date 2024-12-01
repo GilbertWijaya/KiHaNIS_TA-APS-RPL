@@ -1,0 +1,95 @@
+
+// eslint-disable-next-line no-unused-vars
+import TemplateAdmin from "./TemplateAdmin.jsx";
+import "../style/TambahDataSales.css"
+
+const TambahDataSales = () => {
+    return (
+        
+        <>
+
+            <TemplateAdmin>
+                
+                <h1 className="keterangan-tambahdatasales">TAMBAH DATA SALES</h1>
+
+                <div className="data-tambahdatasales">
+
+                    <div className="img-dataadmin">
+                        <img className="dataimg" src="./public/defaultpicture500.jpg" alt="gambar" />
+                    </div>
+
+                    <div className="keterangan-tambahdatasales-content">
+
+                        <div className="field">
+                            <label htmlFor="nama" className="label">Nama</label>
+                            <div className="control">
+                                <input type="text" className="input-tambahdatasales" id="nama" placeholder="nama" required/>
+                            </div>
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="nomorHP" className="label">Nomor HP</label>
+                            <div className="control">
+                                <input type="text" className="input-tambahdatasales" id="nomorHP" placeholder="0822....." required/>
+                            </div>
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="nomorRek" className="label">Nomor Rekening</label>
+                            <div className="control">
+                                <input type="text" className="input-tambahdatasales" id="nomorRek" placeholder="08222800" required/>
+                            </div>
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="email" className="label">Email</label>
+                            <div className="control">
+                                <input type="text" className="input-tambahdatasales" id="email" placeholder="namamu@gmail.com" required/>
+                            </div>
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="kodeTokoAdm" className="label">Kode Toko</label>
+                            <div className="control">
+                                <input type="text" className="input-tambahdatasales" id="kodeTokoAdm" placeholder="g28000t" required/>
+                            </div>
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="jenis-kelamin" className="label">Jenis Kelamin</label>
+                            <div className="control">
+                                <input type="text" className="input-tambahdatasales" id="jenis-kelamin" placeholder="laki-laki" required/>
+                            </div>
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="alamat" className="label">Alamat</label>
+                            <div className="control">
+                                <textarea name="" id="alamat" className="input-tambahdatasales-textarea">alamat</textarea>
+                            </div>
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="Keterangan" className="label">Keterangan</label>
+                            <div className="control">
+                                {/* <input type="text" className="input-dashboardadmin" id="Keterangan" placeholder="Keterangan" required/> */}
+                                <textarea name="" id="Keterangan" className="input-tambahdatasales-textarea">ada apa</textarea>
+                            </div>
+                        </div>
+
+                        <div className="field">
+                            <button className="button-tambahdatasales mt-5" type="submit">Simpan</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </TemplateAdmin>
+
+        </>
+
+    )
+}
+
+export default TambahDataSales
