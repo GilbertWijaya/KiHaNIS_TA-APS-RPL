@@ -7,6 +7,9 @@ import LoginUser from "./components/LoginUser.jsx";
 import DaftarUser from "./components/DaftarUser.jsx";
 import LoginSales from "./components/LoginSales.jsx";
 import DaftarSales from "./components/DaftarSales.jsx";
+import Sidebar from "./components/Sidebar.jsx";
+import Footer from "./components/Footer.jsx";
+import Testing from "./pages/Testing.jsx";
 
 function App() {
 
@@ -16,6 +19,8 @@ function App() {
       <BrowserRouter>
 
         <Routes>
+
+          <Route path="/" element={<Testing />} />
 
           <Route path="/login/admin" element={<LoginAdmin />} />
           <Route path="/login/user" element={<LoginUser />} />

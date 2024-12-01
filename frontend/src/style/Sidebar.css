@@ -1,0 +1,61 @@
+.sidebarcontainer{
+    height: 100svh;
+    background-color: rgba(4, 32, 44, 1);
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+}
+
+.sidebar-keterangan{
+    background-color: rgba(48, 64, 64, 1);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.sidebar-profile{
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.profilepicture{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.sidebar-nav{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.nav-page{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.nav-page a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-page button{
+    color: white;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+

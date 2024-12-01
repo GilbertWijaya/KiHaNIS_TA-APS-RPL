@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.headeradmin-container{
+    position: fixed;
+    background-color: rgba(48, 64, 64, 1);
+    width: 100vw;
+    height: 5.1rem;
+    /* z-index: -1; */
+}
+
+.headeradmin-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.headeradmin-content img{
+    width: 80px;
+    height: 80px;
+}
+
+.logo-keterangan{
+    display: flex;
+    align-items: center;
+    margin-left: 10rem;
+}
+
+.logo-keterangan h1{
+    color: rgba(4, 32, 44, 1);
+    font-size: 24px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.control{
+    display: flex;
+    align-items: center;
+}
+
+.control button{
+    background-color: transparent;
+    border: none;
+    color: rgba(0, 0, 0, 1);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 20rem;
+}
+
+@media screen and (max-width : 1250px) {
+    
+    .logo-keterangan{
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width : 662px) {
+    
+    .logo-keterangan{
+        margin-left: -5rem;
+    }
+
+    .control button{
+
+        margin-left: -3rem;
+
+    }
+
+}
