@@ -12,7 +12,7 @@
     margin-left: -40px;
     margin-top: -20px;
     display: flex;
-    /* justify-content: end; */
+    justify-content: end;
     align-items: center;
     height: 50px;
     position: fixed;
@@ -25,6 +25,7 @@
 .navcontent-user{
     display: flex;
     align-items: center;
+    flex-direction: row;
     margin-right: 40px;
     /* justify-content: end; */
     gap: 20px;
@@ -59,6 +60,8 @@
     border-radius: 10px;
     margin-top: 10px;
 }
+
+
 
 .product-keterangan{
     font-weight: 700;

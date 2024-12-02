@@ -14,8 +14,8 @@ const RiwayatPembayaranUser = () => {
 
                     <div className="navcontent-user">
                         <Link to="" className="img-logo"> <img src="./public/logouang.png" alt="logo" /> </Link>
-                        <Link to="" className="img-logo"> <img src="./public/logouang.png" alt="logo" /> </Link>
-                        <Link to="" className="img-logo"> <img src="./public/logouang.png" alt="logo" /> </Link>
+                        <Link to="" className="img-logo"> <img src="./public/logokeranjang.png" alt="logo" /> </Link>
+                        <Link to="" className="img-logo"> <img src="./public/logoprofile.png" alt="logo" /> </Link>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@ const RiwayatPembayaranUser = () => {
                             </div>
 
                             <div className="action-pembayaran">
-                                <button className="btn-submit" type="submit">DETAIL</button>
+                                <Link className="btn-submit" type="submit">DETAIL</Link>
                             </div>
 
                         </div>
@@ -48,7 +48,7 @@ const RiwayatPembayaranUser = () => {
                             </div>
 
                             <div className="action-pembayaran">
-                                <button className="btn-submit" type="submit">DETAIL</button>
+                                <Link className="btn-submit" type="submit">DETAIL</Link>
                             </div>
 
                         </div>
@@ -64,7 +64,7 @@ const RiwayatPembayaranUser = () => {
                             </div>
 
                             <div className="action-pembayaran">
-                                <button className="btn-submit" type="submit">DETAIL</button>
+                                <Link className="btn-submit" type="submit">DETAIL</Link>
                             </div>
 
                         </div>

@@ -22,6 +22,8 @@ import Testing from "./pages/Testing.jsx";
 import DashboardUser from "./pages/DashboardUser.jsx";
 import RiwayatPembayaranUser from "./pages/RiwayatPembayaranUser.jsx";
 import DetailPembayaranUser from "./pages/DetailPembayaranUser.jsx";
+import ProfileUser from "./pages/ProfileUser.jsx";
+import KeranjangUser from "./pages/KeranjangUser.jsx";
 
 
 function App() {
@@ -33,7 +35,7 @@ function App() {
 
         <Routes>
 
-          <Route path="/"  element={<DetailPembayaranUser />}/>
+          {/* <Route path="/"  element={<KeranjangUser />}/> */}
 
           <Route path="/login/admin" element={<LoginAdmin />} />
           <Route path="/daftar/admin" element={<DaftarAdmin />} />
@@ -48,8 +50,14 @@ function App() {
           <Route path="/admin/detailpembelianadmin/:id" element={<DetailPembelianAdmin />} />
 
           <Route path="/login/user" element={<LoginUser />} />
-          <Route path="/login/sales" element={<LoginSales />} />
           <Route path="/daftar/user" element={<DaftarUser />} />
+          <Route path="/user/profileuser" element={<ProfileUser />}/>
+          <Route path="/user/dashboarduser" element={<DashboardUser />}/>
+          <Route path="/user/riwayatpembayaranuser/:id" element={<RiwayatPembayaranUser />}/>
+          <Route path="/user/detailpembayaranuser/:id" element={<DetailPembayaranUser />}/>
+          <Route path="/user/keranjanguser/:id" element={<KeranjangUser />}/>
+
+          <Route path="/login/sales" element={<LoginSales />} />
           <Route path="/daftar/sales" element={<DaftarSales />} />
 
         </Routes>

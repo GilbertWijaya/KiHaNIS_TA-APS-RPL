@@ -14,8 +14,8 @@ const DetailPembayaranUser = () => {
 
                     <div className="navcontent-user">
                         <Link to="" className="img-logo"> <img src="./public/logouang.png" alt="logo" /> </Link>
-                        <Link to="" className="img-logo"> <img src="./public/logouang.png" alt="logo" /> </Link>
-                        <Link to="" className="img-logo"> <img src="./public/logouang.png" alt="logo" /> </Link>
+                        <Link to="" className="img-logo"> <img src="./public/logokeranjang.png" alt="logo" /> </Link>
+                        <Link to="" className="img-logo"> <img src="./public/logoprofile.png" alt="logo" /> </Link>
                     </div>
                 </div>
 
