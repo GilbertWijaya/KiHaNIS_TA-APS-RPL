@@ -17,6 +17,12 @@ import EditDataBarang from "./pages/EditDataBarang.jsx";
 import DataPembelianAdmin from "./pages/DataPembelianAdmin.jsx";
 import DetailPembelianAdmin from "./pages/DetailPembelianAdmin.jsx";
 
+import Testing from "./pages/Testing.jsx";
+
+import DashboardUser from "./pages/DashboardUser.jsx";
+import RiwayatPembayaranUser from "./pages/RiwayatPembayaranUser.jsx";
+import DetailPembayaranUser from "./pages/DetailPembayaranUser.jsx";
+
 
 function App() {
 
@@ -26,6 +32,8 @@ function App() {
       <BrowserRouter>
 
         <Routes>
+
+          <Route path="/"  element={<DetailPembayaranUser />}/>
 
           <Route path="/login/admin" element={<LoginAdmin />} />
           <Route path="/daftar/admin" element={<DaftarAdmin />} />

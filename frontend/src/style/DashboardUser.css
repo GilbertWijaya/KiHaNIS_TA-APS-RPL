@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-user{
+
+    background-color: rgb(203, 206, 206);
+    color: white;
+    width: 100vw;
+    margin-left: -40px;
+    margin-top: -20px;
+    display: flex;
+    /* justify-content: end; */
+    align-items: center;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    text-decoration: none;
+    
+}
+
+.navcontent-user{
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    /* justify-content: end; */
+    gap: 20px;
+}
+
+
+.displayuser-content{
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    margin-top: 5rem;
+    overflow: scroll;
+    flex-wrap: wrap;
+}
+
+.product-content-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(110, 181, 192, 1);
+    margin-left: 1rem;
+    margin-right: 25px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.imgproduct{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.product-keterangan{
+    font-weight: 700;
+    font-size: 18px;
+    color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn-submit{
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+

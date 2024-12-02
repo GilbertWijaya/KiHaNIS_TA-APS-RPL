@@ -1,12 +1,13 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import HeaderAdmin from "../components/HeaderAdmin.jsx";
 import HeaderUser from "../components/HeaderUser.jsx";
 import Sidebar from "../components/Sidebar.jsx";
 import Footer from "../components/Footer.jsx";
-import "../style/Testing.css";
+import "../style/TemplateUser.css";
 
-const Testing = () => {
+const TemplateUser = ({children}) => {
 
     const [isOpen,setIsOpen] = useState(false);
 
@@ -28,25 +29,7 @@ const Testing = () => {
 
             <div className="testing-content">
                 {/* <button className="button" onClick={toggleSideBar}>{isOpen ? ">" : "<"}</button> */}
-                <h1>Testing</h1>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                <p>Testing</p>
-                
+                {children}
             </div>
 
             <div className="footer">
@@ -58,4 +41,4 @@ const Testing = () => {
     )
 }
 
-export default Testing
+export default TemplateUser
