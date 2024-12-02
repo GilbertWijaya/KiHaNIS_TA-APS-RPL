@@ -17,13 +17,17 @@ import EditDataBarang from "./pages/EditDataBarang.jsx";
 import DataPembelianAdmin from "./pages/DataPembelianAdmin.jsx";
 import DetailPembelianAdmin from "./pages/DetailPembelianAdmin.jsx";
 
-import Testing from "./pages/Testing.jsx";
-
 import DashboardUser from "./pages/DashboardUser.jsx";
 import RiwayatPembayaranUser from "./pages/RiwayatPembayaranUser.jsx";
 import DetailPembayaranUser from "./pages/DetailPembayaranUser.jsx";
 import ProfileUser from "./pages/ProfileUser.jsx";
 import KeranjangUser from "./pages/KeranjangUser.jsx";
+
+import DashboardSales from "./pages/DashboardSales.jsx";
+import RiwayatPembayaranSales from "./pages/RiwayatPembayaranSales.jsx";
+import DetailPembayaranSales from "./pages/DetailPembayaranSales.jsx";
+import ProfileSales from "./pages/ProfileSales.jsx";
+import KeranjangSales from "./pages/KeranjangSales.jsx";
 
 
 function App() {
@@ -35,7 +39,7 @@ function App() {
 
         <Routes>
 
-          {/* <Route path="/"  element={<KeranjangUser />}/> */}
+          {/* <Route path="/"  element={<KeranjangSales />}/> */}
 
           <Route path="/login/admin" element={<LoginAdmin />} />
           <Route path="/daftar/admin" element={<DaftarAdmin />} />
@@ -59,6 +63,12 @@ function App() {
 
           <Route path="/login/sales" element={<LoginSales />} />
           <Route path="/daftar/sales" element={<DaftarSales />} />
+          <Route path="/sales/profilesales" element={<ProfileSales />}/>
+          <Route path="/sales/dashboardsales" element={<DashboardSales />}/>
+          <Route path="/sales/riwayatpembayaransales/:id" element={<RiwayatPembayaranSales />}/>
+          <Route path="/sales/detailpembayaransales/:id" element={<DetailPembayaranSales />}/>
+          <Route path="/sales/keranjangsales/:id" element={<KeranjangSales />}/>
+
 
         </Routes>
 

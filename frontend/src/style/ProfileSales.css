@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.profilesales-container h1{
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.img-profilesales{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.profilsales-content{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.label-profilesales{
+    margin-top: 20px;
+}
+
+.input-profilesales-profile{
+    margin-top: 10px;
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 5px;
+}
+
+.input-textarea-profilesales-profile{
+    margin-top: 10px;
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 5px;
+    resize: none;
+    height: 10rem;
+}
+
+.input-profilesales-profile:focus{
+    outline: none;
+}
+
+.input-textarea-profilesales-profile:focus{
+    outline: none;
+}
+
+.btn-submit{
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 20px;
+}

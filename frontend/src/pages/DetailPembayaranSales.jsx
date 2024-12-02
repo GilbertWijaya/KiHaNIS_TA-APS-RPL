@@ -1,35 +1,36 @@
 /* eslint-disable no-unused-vars */
 
-import "../style/DetailPembayaranUser.css";
-import TemplateUser from "./TemplateUser.jsx";
+import "../style/DetailPembayaranSales.css";
+import TemplateSales from "./TemplateSales.jsx";
 import { Link } from "react-router-dom";
 
-const DetailPembayaranUser = () => {
+const DetailPembayaranSales = () => {
     return (
         <>
 
-            <TemplateUser>
+            <TemplateSales>
 
-                <div className="nav-user">
+                <div className="nav-sales">
 
-                    <div className="navcontent-user">
-                        <Link to="/user/riwayatpembayaranuser/:id" className="img-logo"> <img src="./public/logouang.png" alt="logo" /> </Link>
-                        <Link to="/user/keranjanguser/:id" className="img-logo"> <img src="./public/logokeranjang.png" alt="logo" /> </Link>
-                        <Link to="/user/profileuser" className="img-logo"> <img src="./public/logoprofile.png" alt="logo" /> </Link>
+                    <div className="navcontent-sales">
+                        <Link to="/sales/riwayatpembayaransales/:id" className="img-logo"> <img src="./public/logouang.png" alt="logo" /> </Link>
+                        <Link to="/sales/keranjangsales/:id" className="img-logo"> <img src="./public/logokeranjang.png" alt="logo" /> </Link>
+                        <Link to="/sales/profiletoko" className="img-logo"> <img src="./public/logoprofile.png" alt="logo" /> </Link>
                     </div>
                 </div>
 
-                    <div className="displayuser-detailpembayaran-content">
+                    <div className="displaysales-detailpembayaran-content">
 
-                        <div className="pembayaran-detailcontent-user">
+                        <div className="pembayaran-detailcontent-sales">
 
-                            <h1 className="detail-keterangan-user">DETAIL PEMBELIAN</h1>
+                            <h1 className="detail-keterangan-sales">DETAIL PEMBELIAN</h1>
 
                             <div className="detailpembayaran-img">
                                 <img className="imgpembayarandetail" src="./public/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="detailpembayaran-keterangan">
+                                <p>Nama Sales</p>
                                 <p>Nama Pembeli</p>
                                 <p>Alamat</p>
                                 <p>Status Pembayaran</p>
@@ -51,10 +52,10 @@ const DetailPembayaranUser = () => {
                     </div>
 
 
-            </TemplateUser>
+            </TemplateSales>
 
         </>
     )
 }
 
-export default DetailPembayaranUser
+export default DetailPembayaranSales

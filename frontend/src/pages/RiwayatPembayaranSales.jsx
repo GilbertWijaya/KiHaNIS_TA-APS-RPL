@@ -1,30 +1,34 @@
 /* eslint-disable no-unused-vars */
 
-import "../style/RiwayatPembayaranUser.css";
-import TemplateUser from "./TemplateUser.jsx";
+import "../style/RiwayatPembayaranSales.css";
+import TemplateSales from "./TemplateSales.jsx";
 import { Link } from "react-router-dom";
 
-const RiwayatPembayaranUser = () => {
+const RiwayatPembayaranSales = () => {
     return (
         <>
 
-            <TemplateUser>
+            <TemplateSales>
 
-                <div className="nav-user">
+                <div className="nav-sales">
 
-                    <div className="navcontent-user">
-                        <Link to="/user/riwayatpembayaranuser/:id" className="img-logo"> <img src="./public/logouang.png" alt="logo" /> </Link>
-                        <Link to="/user/keranjanguser/:id" className="img-logo"> <img src="./public/logokeranjang.png" alt="logo" /> </Link>
-                        <Link to="/user/profileuser" className="img-logo"> <img src="./public/logoprofile.png" alt="logo" /> </Link>
+                    <div className="navcontent-sales">
+                        <Link to="/sales/riwayatpembayaransales/:id" className="img-logo"> <img src="./public/logouang.png" alt="logo" /> </Link>
+                        <Link to="/sales/keranjangsales/:id" className="img-logo"> <img src="./public/logokeranjang.png" alt="logo" /> </Link>
+                        <Link to="/sales/profilesales" className="img-logo"> <img src="./public/logoprofile.png" alt="logo" /> </Link>
                     </div>
                 </div>
 
-                    <div className="displayuser-pembayaran-content">
+                    <div className="displaysales-pembayaran-content">
 
-                        <div className="pembayaran-content-user">
+                        <div className="pembayaran-content-sales">
 
                             <div className="pembayaran-img">
                                 <img className="imgpembayaran" src="./public/defaultpicture500.jpg" alt="gambar" />
+                            </div>
+
+                            <div className="pembayaran-keterangan">
+                                <p>Nama Sales</p>
                             </div>
 
                             <div className="pembayaran-keterangan">
@@ -37,10 +41,14 @@ const RiwayatPembayaranUser = () => {
 
                         </div>
                         
-                        <div className="pembayaran-content-user">
+                        <div className="pembayaran-content-sales">
 
                             <div className="pembayaran-img">
                                 <img className="imgpembayaran" src="./public/defaultpicture500.jpg" alt="gambar" />
+                            </div>
+
+                            <div className="pembayaran-keterangan">
+                                <p>Nama Sales</p>
                             </div>
 
                             <div className="pembayaran-keterangan">
@@ -53,10 +61,14 @@ const RiwayatPembayaranUser = () => {
 
                         </div>
 
-                        <div className="pembayaran-content-user">
+                        <div className="pembayaran-content-sales">
 
                             <div className="pembayaran-img">
                                 <img className="imgpembayaran" src="./public/defaultpicture500.jpg" alt="gambar" />
+                            </div>
+
+                            <div className="pembayaran-keterangan">
+                                <p>Nama Sales</p>
                             </div>
 
                             <div className="pembayaran-keterangan">
@@ -72,10 +84,10 @@ const RiwayatPembayaranUser = () => {
                     </div>
 
 
-            </TemplateUser>
+            </TemplateSales>
 
         </>
     )
 }
 
-export default RiwayatPembayaranUser
+export default RiwayatPembayaranSales
