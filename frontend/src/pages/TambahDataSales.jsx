@@ -15,7 +15,7 @@ const TambahDataSales = () => {
                 <div className="data-tambahdatasales">
 
                     <div className="img-dataadmin">
-                        <img className="dataimg" src="./public/defaultpicture500.jpg" alt="gambar" />
+                        <img className="dataimg" src="/defaultpicture500.jpg" alt="gambar" />
                     </div>
 
                     <div className="keterangan-tambahdatasales-content">

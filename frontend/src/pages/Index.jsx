@@ -14,7 +14,7 @@ const Index = () => {
                 <div className="index-header">
                     
                     <div className="index-name">
-                        <img className="index-logo" src="./public/logoapp.png" alt="logo" />
+                        <img className="index-logo" src="/logoapp.png" alt="logo" />
                         <h1>KiHaNIS</h1>
                     </div>
 
@@ -31,7 +31,7 @@ const Index = () => {
                 <div className="index-jumbotron">
 
                     <div className="img-jumbotron">
-                        <img src="./public/logoapp.png" alt="logo" className="jumbotron-img" />
+                        <img src="/logoapp.png" alt="logo" className="jumbotron-img" />
                     </div>
 
                     <div className="jumbotron-keterangan">
@@ -75,17 +75,17 @@ const Index = () => {
                         <div className="tf-founder-content">
 
                             <div className="founder-keterangan">
-                                <img className="picture" src="./public/defaultpicture500.jpg" alt="img" />
+                                <img className="picture" src="/defaultpicture500.jpg" alt="img" />
                                 <h3 className="fw-bold">SANDI WIDYA P</h3>
                                 <p>Berpengalaman Dalam Dunia Desain dan Berbisnis</p>
                             </div>
                             <div className="founder-keterangan">
-                                <img className="picture" src="./public/defaultpicture500.jpg" alt="img" />
+                                <img className="picture" src="/defaultpicture500.jpg" alt="img" />
                                 <h3 className="fw-bold">GILBERT WIJAYA</h3>
                                 <p>Berpengalaman Dalam Dunia Komputer dan Berbisnis</p>
                             </div>
                             <div className="founder-keterangan">
-                                <img className="picture" src="./public/defaultpicture500.jpg" alt="img" />
+                                <img className="picture" src="/defaultpicture500.jpg" alt="img" />
                                 <h3 className="fw-bold">NANDA NALENDRA B</h3>
                                 <p>Berpengalaman Dalam Dunia Bisnis Dalam Berbagai Lingkup</p>
                             </div>
@@ -105,19 +105,19 @@ const Index = () => {
                         <div className="tf-daftar-content">
 
                             <div className="daftar-keterangan">
-                                <img className="picture" src="./public/defaultpicture500.jpg" alt="img" />
+                                <img className="picture" src="/defaultpicture500.jpg" alt="img" />
                                 <h3 className="fw-bold">PEMBELI</h3>
                                 <p>Berpengalaman Dalam Dunia Komputer dan Berbisnis</p>
                                 <p><Link>Daftar</Link></p>
                             </div>
                             <div className="daftar-keterangan">
-                                <img className="picture" src="./public/defaultpicture500.jpg" alt="img" />
+                                <img className="picture" src="/defaultpicture500.jpg" alt="img" />
                                 <h3 className="fw-bold">SALES</h3>
                                 <p>Berpengalaman Dalam Dunia Komputer dan Berbisnis</p>
                                 <p><Link>Daftar</Link></p>
                             </div>
                             <div className="daftar-keterangan">
-                                <img className="picture" src="./public/defaultpicture500.jpg" alt="img" />
+                                <img className="picture" src="/defaultpicture500.jpg" alt="img" />
                                 <h3 className="fw-bold">PENJUAL</h3>
                                 <p>Berpengalaman Dalam Dunia Komputer dan Berbisnis</p>
                                 <p><Link>Daftar</Link></p>
@@ -133,7 +133,7 @@ const Index = () => {
                     <div className="footer-content">
 
                         <div className="img-keterangan">
-                            <img src="./public/logoapp.png" alt="logo" />
+                            <img src="/logoapp.png" alt="logo" />
                             <h3>KiHaNIS(Kita Hebat bisNIS)</h3>
                         </div>
 

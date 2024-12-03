@@ -13,9 +13,9 @@ const DashboardSales = () => {
                 <div className="nav-sales">
 
                     <div className="navcontent-sales">
-                        <Link to="/sales/riwayatpembayaransales/:id" className="img-logo-uang"> <img src="./public/logouang.png" alt="logo" /> </Link>
-                        <Link to="/sales/keranjangsales/:id" className="img-logo"> <img src="./public/logokeranjang.png" alt="logo" /> </Link>
-                        <Link to="/profile/sales" className="img-logo"> <img src="./public/logoprofile.png" alt="logo" /> </Link>
+                        <Link to="/sales/riwayatpembayaransales/:id" className="img-logo-uang"> <img src="/logouang.png" alt="logo" /> </Link>
+                        <Link to="/sales/keranjangsales/:id" className="img-logo"> <img src="/logokeranjang.png" alt="logo" /> </Link>
+                        <Link to="/profile/sales" className="img-logo"> <img src="/logoprofile.png" alt="logo" /> </Link>
                     </div>
                 </div>
 
@@ -24,7 +24,7 @@ const DashboardSales = () => {
                         <div className="product-content-sales">
 
                             <div className="product-img">
-                                <img className="imgproduct" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgproduct" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="product-keterangan">
@@ -40,7 +40,7 @@ const DashboardSales = () => {
                         <div className="product-content-sales">
 
                             <div className="product-img">
-                                <img className="imgproduct" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgproduct" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="product-keterangan">
@@ -56,7 +56,7 @@ const DashboardSales = () => {
                         <div className="product-content-sales">
 
                             <div className="product-img">
-                                <img className="imgproduct" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgproduct" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="product-keterangan">
@@ -72,7 +72,7 @@ const DashboardSales = () => {
                         <div className="product-content-sales">
 
                             <div className="product-img">
-                                <img className="imgproduct" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgproduct" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="product-keterangan">
@@ -88,7 +88,7 @@ const DashboardSales = () => {
                         <div className="product-content-sales">
 
                             <div className="product-img">
-                                <img className="imgproduct" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgproduct" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="product-keterangan">
@@ -104,7 +104,7 @@ const DashboardSales = () => {
                         <div className="product-content-sales">
 
                             <div className="product-img">
-                                <img className="imgproduct" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgproduct" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="product-keterangan">
@@ -120,7 +120,7 @@ const DashboardSales = () => {
                         <div className="product-content-sales">
 
                             <div className="product-img">
-                                <img className="imgproduct" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgproduct" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="product-keterangan">
@@ -136,7 +136,7 @@ const DashboardSales = () => {
                         <div className="product-content-sales">
 
                             <div className="product-img">
-                                <img className="imgproduct" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgproduct" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="product-keterangan">
@@ -152,7 +152,7 @@ const DashboardSales = () => {
                         <div className="product-content-sales">
 
                             <div className="product-img">
-                                <img className="imgproduct" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgproduct" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="product-keterangan">
@@ -168,7 +168,7 @@ const DashboardSales = () => {
                         <div className="product-content-sales">
 
                             <div className="product-img">
-                                <img className="imgproduct" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgproduct" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="product-keterangan">

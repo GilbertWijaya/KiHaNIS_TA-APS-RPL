@@ -13,9 +13,9 @@ const DetailPembayaranSales = () => {
                 <div className="nav-sales">
 
                     <div className="navcontent-sales">
-                        <Link to="/sales/riwayatpembayaransales/:id" className="img-logo"> <img src="./public/logouang.png" alt="logo" /> </Link>
-                        <Link to="/sales/keranjangsales/:id" className="img-logo"> <img src="./public/logokeranjang.png" alt="logo" /> </Link>
-                        <Link to="/sales/profiletoko" className="img-logo"> <img src="./public/logoprofile.png" alt="logo" /> </Link>
+                        <Link to="/sales/riwayatpembayaransales/:id" className="img-logo"> <img src="/logouang.png" alt="logo" /> </Link>
+                        <Link to="/sales/keranjangsales/:id" className="img-logo"> <img src="/logokeranjang.png" alt="logo" /> </Link>
+                        <Link to="/sales/profiletoko" className="img-logo"> <img src="/logoprofile.png" alt="logo" /> </Link>
                     </div>
                 </div>
 
@@ -26,7 +26,7 @@ const DetailPembayaranSales = () => {
                             <h1 className="detail-keterangan-sales">DETAIL PEMBELIAN</h1>
 
                             <div className="detailpembayaran-img">
-                                <img className="imgpembayarandetail" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgpembayarandetail" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="detailpembayaran-keterangan">

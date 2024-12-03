@@ -13,9 +13,9 @@ const RiwayatPembayaranUser = () => {
                 <div className="nav-user">
 
                     <div className="navcontent-user">
-                        <Link to="/user/riwayatpembayaranuser/:id" className="img-logo"> <img src="./public/logouang.png" alt="logo" /> </Link>
-                        <Link to="/user/keranjanguser/:id" className="img-logo"> <img src="./public/logokeranjang.png" alt="logo" /> </Link>
-                        <Link to="/user/profileuser" className="img-logo"> <img src="./public/logoprofile.png" alt="logo" /> </Link>
+                        <Link to="/user/riwayatpembayaranuser/:id" className="img-logo"> <img src="/logouang.png" alt="logo" /> </Link>
+                        <Link to="/user/keranjanguser/:id" className="img-logo"> <img src="/logokeranjang.png" alt="logo" /> </Link>
+                        <Link to="/user/profileuser" className="img-logo"> <img src="/logoprofile.png" alt="logo" /> </Link>
                     </div>
                 </div>
 
@@ -24,7 +24,7 @@ const RiwayatPembayaranUser = () => {
                         <div className="pembayaran-content-user">
 
                             <div className="pembayaran-img">
-                                <img className="imgpembayaran" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgpembayaran" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="pembayaran-keterangan">
@@ -40,7 +40,7 @@ const RiwayatPembayaranUser = () => {
                         <div className="pembayaran-content-user">
 
                             <div className="pembayaran-img">
-                                <img className="imgpembayaran" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgpembayaran" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="pembayaran-keterangan">
@@ -56,7 +56,7 @@ const RiwayatPembayaranUser = () => {
                         <div className="pembayaran-content-user">
 
                             <div className="pembayaran-img">
-                                <img className="imgpembayaran" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="imgpembayaran" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="pembayaran-keterangan">

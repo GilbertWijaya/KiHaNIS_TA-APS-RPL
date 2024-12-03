@@ -19,7 +19,7 @@ const ProfileUser = () => {
                         <form action="">
 
                             <div className="img-profileuser-container">
-                                <img className="img-profileuser" src="./public/defaultpicture500.jpg" alt="gambar" />
+                                <img className="img-profileuser" src="/defaultpicture500.jpg" alt="gambar" />
                             </div>
 
                             <div className="field-profile">

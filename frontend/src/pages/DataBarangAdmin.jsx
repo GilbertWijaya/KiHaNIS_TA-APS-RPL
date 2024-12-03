@@ -19,7 +19,7 @@ const DataBarangAdmin = () => {
                     <div className="keterangan-dashboardbarangadmin-content">
 
                         <div className="dashboardbarangadmin-admin">
-                            <img className="img-barang-admin" src="defaultpicture500.jpg" alt="gambar" />
+                            <img className="img-barang-admin" src="/defaultpicture500.jpg" alt="gambar" />
                             <p>Nama Barang</p>
                             <p>Harga Barang</p>
                             <div className="action-dashboardbarangadmin-admin">
@@ -29,7 +29,7 @@ const DataBarangAdmin = () => {
                         </div>
                         
                         <div className="dashboardbarangadmin-admin">
-                        <img className="img-barang-admin" src="defaultpicture500.jpg" alt="gambar" />
+                        <img className="img-barang-admin" src="/defaultpicture500.jpg" alt="gambar" />
                             <p>Nama Barang</p>
                             <p>Harga Barang</p>
                             <div className="action-dashboardbarangadmin-admin">

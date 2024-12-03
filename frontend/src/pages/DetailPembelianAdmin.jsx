@@ -15,7 +15,7 @@ const DetailPembelianAdmin = () => {
                 <div className="data-detailpembelian">
 
                     <div className="img-detailpembelian">
-                        <img className="dataimg-detailpembelian" src="./public/defaultpicture500.jpg" alt="gambar" />
+                        <img className="dataimg-detailpembelian" src="/defaultpicture500.jpg" alt="gambar" />
                     </div>
 
                     <div className="keterangan-detailpembelian-content">
