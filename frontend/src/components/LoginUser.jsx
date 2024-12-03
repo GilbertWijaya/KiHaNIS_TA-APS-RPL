@@ -58,7 +58,7 @@ const LoginUser = () => {
 
                 <div className="uicontainer-loginuser">
                     
-                    <h1 className="app-loginuser">SELAMAT DATANG</h1>
+                    <h1 className="app-loginuser fw-bold">SELAMAT DATANG</h1>
                     <p className="app-loginuser2">KiHaNIS(Kita Hebat bisNIS)</p>
 
                 </div>

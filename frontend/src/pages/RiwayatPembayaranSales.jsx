@@ -36,7 +36,7 @@ const RiwayatPembayaranSales = () => {
                             </div>
 
                             <div className="action-pembayaran">
-                                <Link className="btn-submit" type="submit">DETAIL</Link>
+                                <Link to="/sales/detailpembayaransales/:id" className="btn-submit" type="submit">DETAIL</Link>
                             </div>
 
                         </div>
@@ -56,7 +56,7 @@ const RiwayatPembayaranSales = () => {
                             </div>
 
                             <div className="action-pembayaran">
-                                <Link className="btn-submit" type="submit">DETAIL</Link>
+                                <Link to="/sales/detailpembayaransales/:id" className="btn-submit" type="submit">DETAIL</Link>
                             </div>
 
                         </div>
@@ -76,7 +76,7 @@ const RiwayatPembayaranSales = () => {
                             </div>
 
                             <div className="action-pembayaran">
-                                <Link className="btn-submit" type="submit">DETAIL</Link>
+                                <Link to="/sales/detailpembayaransales/:id" className="btn-submit" type="submit">DETAIL</Link>
                             </div>
 
                         </div>

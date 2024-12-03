@@ -46,7 +46,11 @@ const ProfileUser = () => {
                             <div className="field-profile">
                                 <label htmlFor="jeniskelamin" className="label-profileuser">JENIS KELAMIN</label>
                                 <div className="control">
-                                    <input type="text" className="input-profileuser-profile" id="jeniskelamin" placeholder="laki-laki" required/>
+                                    {/* <input type="text" className="input-profileuser-profile" id="jeniskelamin" placeholder="laki-laki" required/> */}
+                                    <select name="" id="" className="input-profileuser-profile">
+                                        <option value="laki-laki">laki-laki</option>
+                                        <option value="perempuan">perempuan</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -65,6 +69,13 @@ const ProfileUser = () => {
                                     <textarea name="" id="keterangan" className="input-textarea-profileuser-profile">
                                         ada apa
                                     </textarea>
+                                </div>
+                            </div>
+
+                            <div className="field-profile">
+                                <label htmlFor="profilepic" className="label-profileuser">Profile Picture</label>
+                                <div className="control">
+                                    <input type="file" name="" id="profilepic" className="input-profileuser-profile" />
                                 </div>
                             </div>
 

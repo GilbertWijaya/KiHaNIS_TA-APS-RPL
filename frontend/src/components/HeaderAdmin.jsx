@@ -12,7 +12,7 @@ const HeaderAdmin = () => {
 
 
                     <div className="logo-keterangan">
-                        <img src="./public/logoapp.png" alt="gambar" />
+                        <img src="/logoapp.png" alt="gambar" />
                         <h1>KiHaNIS</h1>
                     </div>
 

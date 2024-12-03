@@ -12,7 +12,7 @@
     margin-top: 1rem;
 }
 
-.input-editdatasales-textarea{
+.input-editdatasales-admin-textarea{
     resize: none;
     height: 15rem;
     width: 80%;
@@ -23,7 +23,7 @@
     border: none;
 }
 
-.input-editdatasales{
+.input-editdatasales-admin{
     width: 80%;
     padding: 10px;
     border: none;
@@ -35,7 +35,7 @@
     transition: 0.3s;
 }
 
-.input-editdatasales:focus,.input-editdatasales-textarea:focus{
+.input-editdatasales-admin:focus,.input-editdatasales-admin-textarea:focus{
     outline: none;
 }
 

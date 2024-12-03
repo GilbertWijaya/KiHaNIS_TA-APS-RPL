@@ -32,7 +32,7 @@ const RiwayatPembayaranUser = () => {
                             </div>
 
                             <div className="action-pembayaran">
-                                <Link className="btn-submit" type="submit">DETAIL</Link>
+                                <Link to="/user/detailpembayaranuser/:id" className="btn-submit" type="submit">DETAIL</Link>
                             </div>
 
                         </div>
@@ -48,7 +48,7 @@ const RiwayatPembayaranUser = () => {
                             </div>
 
                             <div className="action-pembayaran">
-                                <Link className="btn-submit" type="submit">DETAIL</Link>
+                                <Link to="/user/detailpembayaranuser/:id" className="btn-submit" type="submit">DETAIL</Link>
                             </div>
 
                         </div>
@@ -64,7 +64,7 @@ const RiwayatPembayaranUser = () => {
                             </div>
 
                             <div className="action-pembayaran">
-                                <Link className="btn-submit" type="submit">DETAIL</Link>
+                                <Link to="/user/detailpembayaranuser/:id" className="btn-submit" type="submit">DETAIL</Link>
                             </div>
 
                         </div>

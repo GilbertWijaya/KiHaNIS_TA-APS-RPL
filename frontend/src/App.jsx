@@ -59,7 +59,7 @@ function App() {
           <Route path="/login/user" element={<LoginUser />} />
           <Route path="/daftar/user" element={<DaftarUser />} />
           <Route path="/user/profileuser" element={<ProfileUser />}/>
-          <Route path="/user/dashboarduser" element={<DashboardUser />}/>
+          <Route path="/user" element={<DashboardUser />}/>
           <Route path="/user/riwayatpembayaranuser/:id" element={<RiwayatPembayaranUser />}/>
           <Route path="/user/detailpembayaranuser/:id" element={<DetailPembayaranUser />}/>
           <Route path="/user/keranjanguser/:id" element={<KeranjangUser />}/>
@@ -67,7 +67,7 @@ function App() {
           <Route path="/login/sales" element={<LoginSales />} />
           <Route path="/daftar/sales" element={<DaftarSales />} />
           <Route path="/sales/profilesales" element={<ProfileSales />}/>
-          <Route path="/sales/dashboardsales" element={<DashboardSales />}/>
+          <Route path="/sales" element={<DashboardSales />}/>
           <Route path="/sales/riwayatpembayaransales/:id" element={<RiwayatPembayaranSales />}/>
           <Route path="/sales/detailpembayaransales/:id" element={<DetailPembayaranSales />}/>
           <Route path="/sales/keranjangsales/:id" element={<KeranjangSales />}/>

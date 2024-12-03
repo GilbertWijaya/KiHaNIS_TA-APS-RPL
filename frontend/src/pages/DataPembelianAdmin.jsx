@@ -23,8 +23,8 @@ const DataPembelianAdmin = () => {
                             <p>Nomor Pembelian</p>
                             <p>Nama Pembeli</p>
                             <div className="action-dashboardpembelianadmin-admin">
-                                <Link to="/admin/detailpembelian/:id" className="btn-detail">Detail</Link>
-                                <Link to="/admin/detailpembelian/:id" className="btn-verif">Verifikasi</Link>
+                                <Link to="/admin/detailpembelianadmin/:id" className="btn-detail">Detail</Link>
+                                <Link to="/admin/detailpembelianadmin/:id" className="btn-verif">Verifikasi</Link>
                             </div>
                         </div>
                         
@@ -33,8 +33,8 @@ const DataPembelianAdmin = () => {
                             <p>Nomor Pembeli</p>
                             <p>Nama Pembeli</p>
                             <div className="action-dashboardpembelianadmin-admin">
-                                <Link to="/admin/detailpembelian/:id" className="btn-detail">Detail</Link>
-                                <Link to="/admin/detailpembelian/:id" className="btn-verif">Verifikasi</Link>
+                                <Link to="/admin/detailpembelianadmin/:id" className="btn-detail">Detail</Link>
+                                <Link to="/admin/detailpembelianadmin/:id" className="btn-verif">Verifikasi</Link>
                             </div>
                         </div>
 

@@ -19,11 +19,12 @@ const Index = () => {
                     </div>
 
                     <div className="index-keterangan">
-                        <h3>#Kami Solusi Anda</h3>
+                        <h3>#Kami_Solusi_Anda</h3>
                     </div>
 
                     <div className="header-btn">
-                        <Link to="/register" className="btn-register">DAFTAR</Link>
+                        {/* <Link to="#pendaftaran" className="btn-register">DAFTAR</Link> */}
+                        <a href="#pendaftaran" className="btn-register">DAFTAR</a>
                     </div>
 
                 </div>
@@ -96,7 +97,7 @@ const Index = () => {
 
                 </div>
 
-                <div className="index-daftar">
+                <div className="index-daftar" id="pendaftaran">
 
                     <div className="tf-daftar">
 
@@ -107,20 +108,20 @@ const Index = () => {
                             <div className="daftar-keterangan">
                                 <img className="picture" src="/defaultpicture500.jpg" alt="img" />
                                 <h3 className="fw-bold">PEMBELI</h3>
-                                <p>Berpengalaman Dalam Dunia Komputer dan Berbisnis</p>
-                                <p><Link>Daftar</Link></p>
+                                <p>Bantu Setiap Orang Menggerakan Roda Perekonomian Mereka</p>
+                                <p><Link to="/daftar/user">Daftar</Link></p>
                             </div>
                             <div className="daftar-keterangan">
                                 <img className="picture" src="/defaultpicture500.jpg" alt="img" />
                                 <h3 className="fw-bold">SALES</h3>
-                                <p>Berpengalaman Dalam Dunia Komputer dan Berbisnis</p>
-                                <p><Link>Daftar</Link></p>
+                                <p>Bantu Penjual Dan Pembeli Saling Terbantu Termasuk Anda</p>
+                                <p><Link to="/daftar/sales">Daftar</Link></p>
                             </div>
                             <div className="daftar-keterangan">
                                 <img className="picture" src="/defaultpicture500.jpg" alt="img" />
                                 <h3 className="fw-bold">PENJUAL</h3>
-                                <p>Berpengalaman Dalam Dunia Komputer dan Berbisnis</p>
-                                <p><Link>Daftar</Link></p>
+                                <p>Jual Manfaat Anda Kepada Mereka Yang Membutuhkan</p>
+                                <p><Link to="/daftar/admin">Daftar</Link></p>
                             </div>
 
                         </div>

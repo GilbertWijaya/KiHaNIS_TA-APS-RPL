@@ -58,7 +58,11 @@ const DashboardAdmin = () => {
                         <div className="field-admin">
                             <label htmlFor="jenis-kelamin" className="label">Jenis Kelamin</label>
                             <div className="control-admin">
-                                <input type="text" className="input-dashboardadmin" id="jenis-kelamin" placeholder="laki-laki" required/>
+                                {/* <input type="text" className="input-dashboardadmin" id="jenis-kelamin" placeholder="laki-laki" required/> */}
+                                <select name="" id="" className="input-dashboardadmin">
+                                    <option value="laki-laki">Laki-laki</option>
+                                    <option value="perempuan">Perempuan</option>
+                                </select>
                             </div>
                         </div>
 
@@ -74,6 +78,13 @@ const DashboardAdmin = () => {
                             <div className="control-admin">
                                 {/* <input type="text" className="input-dashboardadmin" id="Keterangan" placeholder="Keterangan" required/> */}
                                 <textarea name="" id="Keterangan" className="input-dashboardadmin-textarea">ada apa</textarea>
+                            </div>
+                        </div>
+
+                        <div className="field-admin">
+                            <label htmlFor="profilpic" className="label">Profile Picture</label>
+                            <div className="control-admin">
+                                <input type="file" className="input-dashboardadmin" id="profilpic"/>
                             </div>
                         </div>
 

@@ -20,28 +20,28 @@ const TambahDataBarang = () => {
 
                     <div className="keterangan-tambahdatabarang-content">
 
-                        <div className="field">
+                        <div className="field-tambahdatabarang">
                             <label htmlFor="nama" className="label">Nama</label>
                             <div className="control">
                                 <input type="text" className="input-tambahdatabarang" id="nama" placeholder="nama" required/>
                             </div>
                         </div>
 
-                        <div className="field">
+                        <div className="field-tambahdatabarang">
                             <label htmlFor="harga" className="label">harga</label>
                             <div className="control">
                                 <input type="text" className="input-tambahdatabarang" id="harga" placeholder="28000" required/>
                             </div>
                         </div>
 
-                        <div className="field">
+                        <div className="field-tambahdatabarang">
                             <label htmlFor="kodeBarang" className="label">Kode Barang</label>
                             <div className="control">
                                 <input type="text" className="input-tambahdatabarang" id="KodeBarang" placeholder="11112222" required/>
                             </div>
                         </div>
 
-                        <div className="field">
+                        <div className="field-tambahdatabarang">
                             <label htmlFor="Keterangan" className="label">Keterangan</label>
                             <div className="control">
                                 {/* <input type="text" className="input-dashboardadmin" id="Keterangan" placeholder="Keterangan" required/> */}
@@ -49,7 +49,14 @@ const TambahDataBarang = () => {
                             </div>
                         </div>
 
-                        <div className="field">
+                        <div className="field-tambahdatabarang">
+                            <label htmlFor="productpic" className="label">Product Picture</label>
+                            <div className="control">
+                                <input type="file" className="input-tambahdatabarang" id="productpic" />
+                            </div>
+                        </div>
+
+                        <div className="field-tambahdatabarang">
                             <button className="button-tambahdatabarang mt-5" type="submit">Simpan</button>
                         </div>
 

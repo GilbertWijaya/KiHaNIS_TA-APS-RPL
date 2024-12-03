@@ -37,7 +37,7 @@ const DataSalesAdmin = () => {
                         </div>
 
                         <div className="control">
-                            {/* <Link className="btn-tambah-datasales" to="">Tambah Data Sales</Link> */}
+                            <Link className="btn-tambah-datasales" to="/admin/tambahdatasales">Tambah Data Sales</Link>
                         </div>
 
                     </div>

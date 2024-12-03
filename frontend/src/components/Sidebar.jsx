@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import "../style/Sidebar.css";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
     return (
@@ -14,7 +16,7 @@ const Sidebar = () => {
                 <div className="sidebar-profile">
 
                     <div className="profilepicture">
-                        <img className="profilepicture" src="./public/defaultpicture500.jpg" alt="gambar" />
+                        <img className="profilepicture" src="/defaultpicture500.jpg" alt="gambar" />
                     </div>
 
                     <div className="profile-keterangan">
@@ -27,22 +29,22 @@ const Sidebar = () => {
                 <div className="sidebar-nav">
 
                     <div className="nav-page">
-                        <a href="">HOME</a>
+                        <Link to="/admin">HOME</Link>
                         <button>&gt;</button>
                     </div>
 
                     <div className="nav-page">
-                        <a href="">SALES</a>
+                        <Link to="/admin/datasalesadmin">SALES</Link>
                         <button>&gt;</button>
                     </div>
 
                     <div className="nav-page">
-                        <a href="">PEMBELi</a>
+                        <Link to="/admin/datapembelianadmin">PEMBELi</Link>
                         <button>&gt;</button>
                     </div>
 
                     <div className="nav-page">
-                        <a href="">BARANG</a>
+                        <Link to="/admin/databarangadmin">BARANG</Link>
                         <button>&gt;</button>
                     </div>
 

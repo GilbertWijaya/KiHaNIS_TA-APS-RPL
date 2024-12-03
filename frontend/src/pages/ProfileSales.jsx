@@ -12,7 +12,7 @@ const ProfileSales = () => {
                 
                 <div className="profilesales-container">
 
-                    <h1>PROFILE USER</h1>
+                    <h1>PROFILE SALES</h1>
 
                     <div className="profilsales-content">
 
@@ -53,7 +53,12 @@ const ProfileSales = () => {
                             <div className="field-profile-sales">
                                 <label htmlFor="jeniskelamin" className="label-profilesales">JENIS KELAMIN</label>
                                 <div className="control">
-                                    <input type="text" className="input-profilesales-profile" id="jeniskelamin" placeholder="laki-laki" required/>
+                                    {/* <input type="text" className="input-profilesales-profile" id="jeniskelamin" placeholder="laki-laki" required/> */}
+                                    
+                                    <select id="jeniskelamin" className="input-profilesales-profile">
+                                        <option value="laki-laki">Laki-laki</option>
+                                        <option value="perempuan">Perempuan</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -72,6 +77,13 @@ const ProfileSales = () => {
                                     <textarea name="" id="keterangan" className="input-textarea-profilesales-profile">
                                         ada apa
                                     </textarea>
+                                </div>
+                            </div>
+
+                            <div className="field-profile-sales">
+                                <label htmlFor="profilepic" className="label-profilesales">PROFILE PICTURE</label>
+                                <div className="control">
+                                    <input type="file" name="" id="profilepic" className="input-profilesales-profile"/>
                                 </div>
                             </div>
 

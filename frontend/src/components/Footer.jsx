@@ -10,7 +10,7 @@ const Footer = () => {
                 <div className="footer-content">
 
                     <div className="img-keterangan">
-                        <img src="./public/logoapp.png" alt="logo" />
+                        <img src="/logoapp.png" alt="logo" />
                         <h3>KiHaNIS(Kita Hebat bisNIS)</h3>
                     </div>
 

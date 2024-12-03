@@ -20,28 +20,28 @@ const EditDataBarang = () => {
 
                     <div className="keterangan-editdatabarang-content">
 
-                        <div className="field">
+                        <div className="field-editdatabarang">
                             <label htmlFor="nama" className="label">Nama</label>
                             <div className="control">
                                 <input type="text" className="input-editdatabarang" id="nama" placeholder="nama" required/>
                             </div>
                         </div>
 
-                        <div className="field">
+                        <div className="field-editdatabarang">
                             <label htmlFor="harga" className="label">harga</label>
                             <div className="control">
                                 <input type="text" className="input-editdatabarang" id="harga" placeholder="28000" required/>
                             </div>
                         </div>
 
-                        <div className="field">
+                        <div className="field-editdatabarang">
                             <label htmlFor="kodeBarang" className="label">Kode Barang</label>
                             <div className="control">
                                 <input type="text" className="input-editdatabarang" id="KodeBarang" placeholder="11112222" required/>
                             </div>
                         </div>
 
-                        <div className="field">
+                        <div className="field-editdatabarang">
                             <label htmlFor="Keterangan" className="label">Keterangan</label>
                             <div className="control">
                                 {/* <input type="text" className="input-dashboardadmin" id="Keterangan" placeholder="Keterangan" required/> */}
@@ -49,7 +49,14 @@ const EditDataBarang = () => {
                             </div>
                         </div>
 
-                        <div className="field">
+                        <div className="field-editdatabarang">
+                            <label htmlFor="productpic" className="label">Product Picture</label>
+                            <div className="control">
+                                <input type="file" name="" id="productpic" className="input-editdatabarang"/>
+                            </div>
+                        </div>
+
+                        <div className="field-editdatabarang">
                             <button className="button-editdatabarang mt-5" type="submit">Simpan</button>
                         </div>
 
