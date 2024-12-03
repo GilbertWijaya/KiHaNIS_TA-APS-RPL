@@ -1,12 +1,11 @@
 /* eslint-disable no-unused-vars */
 
 import {BrowserRouter,Routes,Route} from "react-router-dom";
+
+import Index from "./pages/index.jsx";
+
 import LoginAdmin from "./components/LoginAdmin.jsx";
 import DaftarAdmin from "./components/DaftarAdmin.jsx";
-import LoginUser from "./components/LoginUser.jsx";
-import DaftarUser from "./components/DaftarUser.jsx";
-import LoginSales from "./components/LoginSales.jsx";
-import DaftarSales from "./components/DaftarSales.jsx";
 import DashboardAdmin from "./pages/DashboardAdmin.jsx";
 import DataSalesAdmin from "./pages/DataSalesAdmin.jsx";
 import EditDataSales from "./pages/EditDataSales.jsx";
@@ -17,12 +16,16 @@ import EditDataBarang from "./pages/EditDataBarang.jsx";
 import DataPembelianAdmin from "./pages/DataPembelianAdmin.jsx";
 import DetailPembelianAdmin from "./pages/DetailPembelianAdmin.jsx";
 
+import LoginUser from "./components/LoginUser.jsx";
+import DaftarUser from "./components/DaftarUser.jsx";
 import DashboardUser from "./pages/DashboardUser.jsx";
 import RiwayatPembayaranUser from "./pages/RiwayatPembayaranUser.jsx";
 import DetailPembayaranUser from "./pages/DetailPembayaranUser.jsx";
 import ProfileUser from "./pages/ProfileUser.jsx";
 import KeranjangUser from "./pages/KeranjangUser.jsx";
 
+import LoginSales from "./components/LoginSales.jsx";
+import DaftarSales from "./components/DaftarSales.jsx";
 import DashboardSales from "./pages/DashboardSales.jsx";
 import RiwayatPembayaranSales from "./pages/RiwayatPembayaranSales.jsx";
 import DetailPembayaranSales from "./pages/DetailPembayaranSales.jsx";
@@ -39,7 +42,7 @@ function App() {
 
         <Routes>
 
-          {/* <Route path="/"  element={<KeranjangSales />}/> */}
+          <Route path="/"  element={<Index />}/>
 
           <Route path="/login/admin" element={<LoginAdmin />} />
           <Route path="/daftar/admin" element={<DaftarAdmin />} />
