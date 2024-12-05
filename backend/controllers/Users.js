@@ -45,13 +45,25 @@ export const getUserById = async(req,res) =>{
 
     try {
         
-        const response = await Users.findAll({
+        const response = await Users.findOne({
             where : {
                 id : req.params.id
             }
         });
 
-        res.status(200).json(response);
+        const base64Image = response.ProfilePicture.toString('base64');
+        
+        res.status(200).json({
+            id : response.id,
+            name : response.name,
+            nomorHP : response.nomorHP,
+            nomorRek : response.nomorRek,
+            email : response.email,
+            jenisKelamin : response.jenisKelamin,
+            alamat : response.alamat,
+            keterangan : response.keterangan,
+            ProfilePicture : null || `data:image/*;base64,${base64Image}`
+        });
 
     } catch (error) {
         res.status(500).json({message : `Error getting users by id ${error.message}`});

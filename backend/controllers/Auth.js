@@ -126,9 +126,10 @@ export const login = async(req,res) => {
             res.status(200).json({
                 message: "Login berhasil",
                 user : {
+                    id :user.id,
                     name,
                     email,
-                    // kodeTokoAdm,
+                    kodeTokoAdm,
                     role
                 },
                 accessToken

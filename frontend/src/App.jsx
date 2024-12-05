@@ -16,7 +16,7 @@ import EditDataBarang from "./pages/EditDataBarang.jsx";
 import DataPembelianAdmin from "./pages/DataPembelianAdmin.jsx";
 import DetailPembelianAdmin from "./pages/DetailPembelianAdmin.jsx";
 
-import LoginUser from "./components/LoginUser.jsx";
+import LoginUserComp from "./components/LoginUserComp.jsx";
 import DaftarUser from "./components/DaftarUser.jsx";
 import DashboardUser from "./pages/DashboardUser.jsx";
 import RiwayatPembayaranUser from "./pages/RiwayatPembayaranUser.jsx";
@@ -56,10 +56,10 @@ function App() {
           <Route path="/admin/datapembelianadmin" element={<DataPembelianAdmin />} />
           <Route path="/admin/detailpembelianadmin/:id" element={<DetailPembelianAdmin />} />
 
-          <Route path="/login/user" element={<LoginUser />} />
+          <Route path="/login/user" element={<LoginUserComp />} />
           <Route path="/daftar/user" element={<DaftarUser />} />
-          <Route path="/user/profileuser" element={<ProfileUser />}/>
-          <Route path="/user" element={<DashboardUser />}/>
+          <Route path="/user/profileuser/:id" element={<ProfileUser />}/>
+          <Route path="/user/:id" element={<DashboardUser />}/>
           <Route path="/user/riwayatpembayaranuser/:id" element={<RiwayatPembayaranUser />}/>
           <Route path="/user/detailpembayaranuser/:id" element={<DetailPembayaranUser />}/>
           <Route path="/user/keranjanguser/:id" element={<KeranjangUser />}/>

@@ -2,9 +2,29 @@
 
 import "../style/RiwayatPembayaranUser.css";
 import TemplateUser from "./TemplateUser.jsx";
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
+import axios from "axios";
+import { useState,useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const RiwayatPembayaranUser = () => {
+
+    const [Nota,setNota] = useState([]);
+    const {id} = useParams();
+
+    const getNota = async() => {
+        const response = await axios.get(`http://localhost:1221/api/nota/user/${id}`);
+        setNota(response.data);
+    }
+
+    useEffect(() => {
+        getNota();
+    },[id]);
+
+    // console.log(Nota);
+    const {user} = useSelector((state) => state.auth);
+    
+
     return (
         <>
 
@@ -13,61 +33,40 @@ const RiwayatPembayaranUser = () => {
                 <div className="nav-user">
 
                     <div className="navcontent-user">
-                        <Link to="/user/riwayatpembayaranuser/:id" className="img-logo"> <img src="/logouang.png" alt="logo" /> </Link>
-                        <Link to="/user/keranjanguser/:id" className="img-logo"> <img src="/logokeranjang.png" alt="logo" /> </Link>
-                        <Link to="/user/profileuser" className="img-logo"> <img src="/logoprofile.png" alt="logo" /> </Link>
+                        <Link to={`/user/riwayatpembayaranuser/${user.user.id}`} className="img-logo"> <img src="/logouang.png" alt="logo" /> </Link>
+                        <Link to={`/user/keranjanguser/${user.user.id}`} className="img-logo"> <img src="/logokeranjang.png" alt="logo" /> </Link>
+                        <Link to={`/user/profileuser/${user.user.id}`} className="img-logo"> <img src="/logoprofile.png" alt="logo" /> </Link>
                     </div>
                 </div>
 
                     <div className="displayuser-pembayaran-content">
 
-                        <div className="pembayaran-content-user">
+                        {
 
-                            <div className="pembayaran-img">
-                                <img className="imgpembayaran" src="/defaultpicture500.jpg" alt="gambar" />
-                            </div>
+                            Nota.map((nota,_) => {
 
-                            <div className="pembayaran-keterangan">
-                                <p>Nama Pembeli</p>
-                            </div>
+                                return (
+                                <div className="pembayaran-content-user" key={nota.id}>
 
-                            <div className="action-pembayaran">
-                                <Link to="/user/detailpembayaranuser/:id" className="btn-submit" type="submit">DETAIL</Link>
-                            </div>
+                                    <div className="pembayaran-img">
+                                        <img className="imgpembayaran" src={nota.buktiPembayaran} alt="gambar" />
+                                    </div>
 
-                        </div>
-                        
-                        <div className="pembayaran-content-user">
+                                    <div className="pembayaran-keterangan">
+                                        <p>{nota.namaPembeli}</p>
+                                    </div>
 
-                            <div className="pembayaran-img">
-                                <img className="imgpembayaran" src="/defaultpicture500.jpg" alt="gambar" />
-                            </div>
+                                    <div className="action-pembayaran">
+                                        <Link to={`/user/detailpembayaranuser/${nota.id}`} className="btn-submit" type="submit">DETAIL</Link>
+                                    </div>
 
-                            <div className="pembayaran-keterangan">
-                                <p>Nama Pembeli</p>
-                            </div>
+                                </div>
 
-                            <div className="action-pembayaran">
-                                <Link to="/user/detailpembayaranuser/:id" className="btn-submit" type="submit">DETAIL</Link>
-                            </div>
+                            )})
 
-                        </div>
 
-                        <div className="pembayaran-content-user">
+                        }
 
-                            <div className="pembayaran-img">
-                                <img className="imgpembayaran" src="/defaultpicture500.jpg" alt="gambar" />
-                            </div>
-
-                            <div className="pembayaran-keterangan">
-                                <p>Nama Pembeli</p>
-                            </div>
-
-                            <div className="action-pembayaran">
-                                <Link to="/user/detailpembayaranuser/:id" className="btn-submit" type="submit">DETAIL</Link>
-                            </div>
-
-                        </div>
 
                     </div>
 

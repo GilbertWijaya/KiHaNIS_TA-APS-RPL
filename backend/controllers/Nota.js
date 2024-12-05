@@ -78,9 +78,9 @@ export const getNotaByUserId = async(req,res) => {
 
     try {
 
-        const response = await Nota.findOne({
+        const response = await Nota.findAll({
             where : {
-                userId : req.session.userId
+                userId : req.params.id
             },
             include : [{
                 model : Admin,
@@ -88,7 +88,36 @@ export const getNotaByUserId = async(req,res) => {
             }]
         });
         
-        res.status(200).json(response);
+
+        
+        // const base64Image = response.buktiPembayaran.toString('base64');
+
+        // res.status(200).json({
+        //     id : response.id,
+        //     namaPembeli : response.namaPembeli,
+        //     kodeTokoAdm : response.kodeTokoAdm,
+        //     dataBarang : response.dataBarang,
+        //     buktiPembayaran : `data:image/*;base64,${base64Image}`,
+        //     statusPembayaran : response.statusPembayaran,
+        //     userId : response.userId,
+        //     adminId : response.adminId
+        // });
+
+        const formattedResponse = response.map((nota) => {
+            const base64Image = nota.buktiPembayaran.toString('base64');
+            return {
+                id: nota.id,
+                namaPembeli: nota.namaPembeli,
+                kodeTokoAdm : nota.kodeTokoAdm,
+                dataBarang: nota.dataBarang,
+                buktiPembayaran : `data:image/*;base64,${base64Image}`,
+                statusPembayaran : nota.statusPembayaran,
+                userId : nota.userId,
+                adminId : nota.adminId
+            };
+        });
+
+        res.status(200).json(formattedResponse);
 
     } catch (error) {
         res.status(500).json({message : `Gagal mengambil data nota ${error.message}`});

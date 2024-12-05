@@ -64,6 +64,59 @@ export const getProductById = async(req,res) =>{
             }
         });
 
+        // console.log(response);
+        
+
+        // const base64Image = response[0].ProductPicture.toString('base64');
+
+
+        // res.status(200).json({
+        //     id : response[0].id,
+        //     namaBarang : response[0].namaBarang,
+        //     hargaBarang : response[0].hargaBarang,
+        //     kodeBarang : response[0].kodeBarang,
+        //     keterangan : response[0].keterangan,
+        //     ProductPicture : `data:image/*;base64,${base64Image}`,
+        //     kodeTokoAdm : response[0].kodeTokoAdm,
+        //     adminId : response[0].adminId
+        // });
+
+        const formattedResponse = response.map((product) => {
+            const base64Image = product.ProductPicture.toString('base64');
+            return {
+                id: product.id,
+                namaBarang: product.namaBarang,
+                hargaBarang: product.hargaBarang,
+                kodeBarang: product.kodeBarang,
+                keterangan: product.keterangan,
+                ProductPicture: `data:image/*;base64,${base64Image}`,
+                kodeTokoAdm: product.kodeTokoAdm,
+                adminId: product.adminId
+            };
+        });
+
+        res.status(200).json(formattedResponse);
+
+    } catch (error) {
+        res.status(500).json({message : `Error getting products ${error.message}`});
+    }
+
+}
+
+export const getProductByKodeToko = async(req,res) =>{
+
+    try {
+        
+        const response = await Products.findAll({
+            where : {
+                kodeTokoAdm : req.session.kodeTokoAdm
+            }
+        });
+
+        // console.log(response);
+
+        const base64Image = response.ProductPicture.toString('base64');
+
         res.status(200).json(response);
 
     } catch (error) {

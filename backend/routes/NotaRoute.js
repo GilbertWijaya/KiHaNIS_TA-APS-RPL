@@ -10,7 +10,7 @@ const upload = multer({
     limits : {fileSize : 10 * 1024 * 1024}
 });
 
-router.get("/nota/user",getNotaByUserId);
+router.get("/nota/user/:id",getNotaByUserId);
 router.get("/nota/sales",getNotaBySalesId);
 router.get("/nota/admin",getNotaByAdminId);
 router.get("/nota/getnota/:id",getNotaById);

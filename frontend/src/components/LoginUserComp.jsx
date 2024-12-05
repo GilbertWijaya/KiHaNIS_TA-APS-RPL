@@ -1,9 +1,37 @@
 /* eslint-disable no-unused-vars */
 
 import "../style/LoginUser.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import {useDispatch,useSelector} from "react-redux";
+import {LoginUser,reset} from "../features/authSlice";
+import { useState,useEffect } from "react";
 
-const LoginUser = () => {
+const LoginUserComp = () => {
+
+    const [email,setEmail] = useState("");
+    const [kodeTokoAdm,setKodeTokoAdm] = useState("");
+    const [password,setPassword] = useState("");
+    const {user,isError,isSucess,isLoading,message} = useSelector((state) => state.auth);
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+
+        if (user || isSucess) {
+            navigate(`/user/${kodeTokoAdm}`);
+        }
+
+        // dispatch(reset());
+
+    },[user,isSucess,dispatch,navigate]);
+
+    const Auth = (e) => {
+        e.preventDefault();
+        // Logic for authentication and redirection
+        dispatch(LoginUser({email,kodeTokoAdm,password}));
+    }
+
     return (
         
         <>
@@ -11,7 +39,7 @@ const LoginUser = () => {
             <div className="container-loginuser">
                 
                 <div className="formcontainer-loginuser">
-                    <form action="">
+                    <form action="" onSubmit={Auth}>
 
                         <div className="content-loginuser">
 
@@ -20,21 +48,21 @@ const LoginUser = () => {
                             <div className="field-loginuser">
                                 <label htmlFor="email" className="label-loginuser">Email</label>
                                 <div className="control-loginuser">
-                                        <input type="text" className="input-loginuser" id="email" placeholder="email" required/>
+                                        <input type="text" className="input-loginuser" id="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
                                 </div>
                             </div>
 
                             <div className="field-loginuser">
                                 <label htmlFor="kode-toko" className="label-loginuser">Kode Toko</label>
                                 <div className="control-loginuser">
-                                        <input type="text" id="kode-toko" className="input-loginuser" placeholder="g2800t" required/>
+                                        <input type="text" id="kode-toko" className="input-loginuser" placeholder="g2800t" value={kodeTokoAdm} onChange={(e) => setKodeTokoAdm(e.target.value)} required/>
                                 </div>
                             </div>
 
                             <div className="field-loginuser">
                                 <label htmlFor="password" className="label-loginuser">password</label>
                                 <div className="control-loginuser">
-                                        <input type="password" id="password" className="input-loginuser" placeholder="********" required/>
+                                        <input type="password" id="password" className="input-loginuser" placeholder="********" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                                 </div>
                             </div>
 
@@ -51,8 +79,8 @@ const LoginUser = () => {
                             </div>
 
                         </div>
-
                     </form>
+
 
                 </div>
 
@@ -70,4 +98,4 @@ const LoginUser = () => {
     )
 }
 
-export default LoginUser
+export default LoginUserComp

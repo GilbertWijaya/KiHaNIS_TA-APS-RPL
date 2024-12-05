@@ -2,8 +2,80 @@
 
 import "../style/ProfileUser.css";
 import TemplateUser from "./TemplateUser.jsx";
+import axios from "axios";
+import { useState,useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useParams,useNavigate} from "react-router-dom";
 
 const ProfileUser = () => {
+    
+    // const {user} = useSelector((state) => state.auth);
+
+    const {id} = useParams();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        getProfile();
+    },[id])
+
+    const getProfile = async() => {
+        const response = await axios.get(`http://localhost:1221/api/users/${id}`);
+        setName(response.data.name);
+        setNomorHP(response.data.nomorHP);
+        setNomorRek(response.data.nomorRek);
+        setJenisKelamin(response.data.jenisKelamin);
+        setAlamat(response.data.alamat);
+        setKeterangan(response.data.keterangan);
+        setGambar(response.data.ProfilePicture);
+    }
+    
+    
+    const [name,setName] = useState("");
+    const [nomorHP,setNomorHP] = useState("");
+    const [nomorRek,setNomorRek] = useState("");
+    const [jenisKelamin,setJenisKelamin] = useState("");
+    const [alamat,setAlamat] = useState("");
+    const [keterangan,setKeterangan] = useState("");
+    const [gambar,setGambar] = useState("");
+    
+    const uploadImage = async(e) => {
+        const file = e.target.files[0];
+        
+        setGambar(file)
+        
+    }
+    
+    const updateUser = async(e) => {
+
+        e.preventDefault();
+
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('nomorHP', nomorHP);
+        formData.append('nomorRek', nomorRek);
+        formData.append('jenisKelamin', jenisKelamin);
+        formData.append('alamat', alamat);
+        formData.append('keterangan', keterangan);
+        formData.append('ProfilePicture', gambar);
+
+        try {
+           
+            await axios.patch(`http://localhost:1221/api/users/${id}`,formData,{
+                headers : {
+                    'Content-Type' : 'multipart/form-data'
+                }
+            });
+
+            navigate(`/user/profileuser/${id}`);
+
+        } catch (error) {
+            if (error.response) {
+                console.log(error.response.data.message);
+            }
+        }
+
+    }
+
     return (
         
         <>
@@ -16,30 +88,30 @@ const ProfileUser = () => {
 
                     <div className="profiluser-content">
 
-                        <form action="">
+                        <form action="" onSubmit={updateUser}>
 
                             <div className="img-profileuser-container">
-                                <img className="img-profileuser" src="/defaultpicture500.jpg" alt="gambar" />
+                                <img className="img-profileuser" src={gambar || `/defaultpicture500.jpg`} alt="gambar" />
                             </div>
 
                             <div className="field-profile">
                                 <label htmlFor="nama" className="label-profileuser">NAMA</label>
                                 <div className="control">
-                                    <input type="text" className="input-profileuser-profile" id="nama" placeholder="nama" required/>
+                                    <input type="text" className="input-profileuser-profile" id="nama" value={name} onChange={(e) => setName(e.target.value)} placeholder="nama" required/>
                                 </div>
                             </div>
 
                             <div className="field-profile">
                                 <label htmlFor="nomorHP" className="label-profileuser">NOMOR HP</label>
                                 <div className="control">
-                                    <input type="text" className="input-profileuser-profile" id="nomorHP" placeholder="0822----1234" required/>
+                                    <input type="text" className="input-profileuser-profile" id="nomorHP" value={nomorHP} onChange={(e) => setNomorHP(e.target.value)} placeholder="0822----1234" required/>
                                 </div>
                             </div>
 
                             <div className="field-profile">
                                 <label htmlFor="nomorRek" className="label-profileuser">NOMOR REKENING</label>
                                 <div className="control">
-                                    <input type="text" className="input-profileuser-profile" id="nomorRek" placeholder="03341234" required/>
+                                    <input type="text" className="input-profileuser-profile" id="nomorRek" value={nomorRek} onChange={(e) => setNomorRek(e.target.value)} placeholder="03341234" required/>
                                 </div>
                             </div>
 
@@ -47,7 +119,7 @@ const ProfileUser = () => {
                                 <label htmlFor="jeniskelamin" className="label-profileuser">JENIS KELAMIN</label>
                                 <div className="control">
                                     {/* <input type="text" className="input-profileuser-profile" id="jeniskelamin" placeholder="laki-laki" required/> */}
-                                    <select name="" id="" className="input-profileuser-profile">
+                                    <select name="" id="" value={jenisKelamin} onChange={(e) => setJenisKelamin(e.target.value)} className="input-profileuser-profile">
                                         <option value="laki-laki">laki-laki</option>
                                         <option value="perempuan">perempuan</option>
                                     </select>
@@ -57,7 +129,7 @@ const ProfileUser = () => {
                             <div className="field-profile">
                                 <label htmlFor="alamat" className="label-profileuser">ALAMAT</label>
                                 <div className="control">
-                                    <textarea name="" id="alamat" className="input-textarea-profileuser-profile">
+                                    <textarea name="" id="alamat" value={alamat} onChange={(e) => setAlamat(e.target.value)} className="input-textarea-profileuser-profile">
                                         ada apa
                                     </textarea>
                                 </div>
@@ -66,7 +138,7 @@ const ProfileUser = () => {
                             <div className="field-profile">
                                 <label htmlFor="keterangan" className="label-profileuser">KETERANGAN</label>
                                 <div className="control">
-                                    <textarea name="" id="keterangan" className="input-textarea-profileuser-profile">
+                                    <textarea name="" id="keterangan" value={keterangan} onChange={(e) => setKeterangan(e.target.value)} className="input-textarea-profileuser-profile">
                                         ada apa
                                     </textarea>
                                 </div>
@@ -75,7 +147,7 @@ const ProfileUser = () => {
                             <div className="field-profile">
                                 <label htmlFor="profilepic" className="label-profileuser">Profile Picture</label>
                                 <div className="control">
-                                    <input type="file" name="" id="profilepic" className="input-profileuser-profile" />
+                                    <input type="file" name="" id="profilepic"  onChange={uploadImage} className="input-profileuser-profile" />
                                 </div>
                             </div>
 
