@@ -1,5 +1,5 @@
 import express from "express";
-import { getNotaByUserId,getNotaBySalesId,getNotaByAdminId,createNota,deleteNota,getNotaById,updateNota } from "../controllers/Nota.js";
+import { getNotaByUserId,getNotaBySalesId,getNotaByAdminId,createNota,deleteNota,getNotaById,updateNota, getNotaByIdNota } from "../controllers/Nota.js";
 import {verifyAdmin,AdminOnly,verifyUser} from "../middleware/AuthUser.js";
 import multer from "multer";
 
@@ -11,10 +11,11 @@ const upload = multer({
 });
 
 router.get("/nota/user/:id",getNotaByUserId);
+router.get("/nota/user/bynota/:id",getNotaByIdNota);
 router.get("/nota/sales",getNotaBySalesId);
 router.get("/nota/admin",getNotaByAdminId);
 router.get("/nota/getnota/:id",getNotaById);
-router.post("/nota",verifyUser,upload.single("buktiPembayaran"),createNota);
+router.post("/nota",upload.single("buktiPembayaran"),createNota);
 router.patch("/nota/:id",AdminOnly,verifyAdmin,updateNota);
 router.delete("/nota/:id",AdminOnly,verifyAdmin,deleteNota);
 

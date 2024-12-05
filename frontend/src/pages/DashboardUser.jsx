@@ -25,7 +25,15 @@ const DashboardUser = () => {
         setProducts(response.data);
     }
 
+    const handleLocalStorage = (product) => {
 
+        const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const updateCart = [...existingCart,product];
+
+        localStorage.setItem("cart", JSON.stringify(updateCart));
+
+    }
 
     return (
         <>
@@ -62,7 +70,7 @@ const DashboardUser = () => {
                                         </div>
 
                                         <div className="action-product">
-                                            <button className="btn-submit" type="submit">Rp {product.hargaBarang}</button>
+                                            <button className="btn-submit" onClick={() => handleLocalStorage(product)} type="submit">Rp {product.hargaBarang}</button>
                                         </div>
 
                                         

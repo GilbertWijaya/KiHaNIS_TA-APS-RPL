@@ -4,11 +4,17 @@ import "../style/HeaderUser.css";
 import {useDispatch,useSelector} from "react-redux";
 import {LogOut,reset} from "../features/authSlice.js";
 import { useNavigate } from "react-router-dom";
+import { getMe } from "../features/authSlice.js";
+import { useEffect } from "react";
 
 const HeaderUser = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        dispatch(getMe());
+    }, [dispatch]);
 
     const {user} = useSelector(state => state.auth);
 
@@ -18,9 +24,6 @@ const HeaderUser = () => {
         dispatch(reset());
         navigate("/");
     }
-
-    // console.log(user);
-    
 
     return (
         

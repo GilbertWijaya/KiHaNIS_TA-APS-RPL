@@ -4,39 +4,56 @@ import "../style/ProfileUser.css";
 import TemplateUser from "./TemplateUser.jsx";
 import axios from "axios";
 import { useState,useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector ,useDispatch} from "react-redux";
 import { useParams,useNavigate} from "react-router-dom";
+import { getMe } from "../features/authSlice.js";
 
 const ProfileUser = () => {
     
-    // const {user} = useSelector((state) => state.auth);
+    const dispatch = useDispatch();
+    const {user} = useSelector((state) => state.auth);
 
     const {id} = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {
-        getProfile();
+        dispatch(getMe());
+    },[dispatch])
+
+    useEffect(() => {
+        // getProfile();
     },[id])
 
-    const getProfile = async() => {
-        const response = await axios.get(`http://localhost:1221/api/users/${id}`);
-        setName(response.data.name);
-        setNomorHP(response.data.nomorHP);
-        setNomorRek(response.data.nomorRek);
-        setJenisKelamin(response.data.jenisKelamin);
-        setAlamat(response.data.alamat);
-        setKeterangan(response.data.keterangan);
-        setGambar(response.data.ProfilePicture);
-    }
+    
+
+    // const getProfile = async() => {
+    //     const response = await axios.get(`http://localhost:1221/api/users/${id}`);
+    //     setName(response.data.name);
+    //     setNomorHP(response.data.nomorHP);
+    //     setNomorRek(response.data.nomorRek);
+    //     setJenisKelamin(response.data.jenisKelamin);
+    //     setAlamat(response.data.alamat);
+    //     setKeterangan(response.data.keterangan);
+    //     setGambar(response.data.ProfilePicture);
+    // }
     
     
-    const [name,setName] = useState("");
-    const [nomorHP,setNomorHP] = useState("");
-    const [nomorRek,setNomorRek] = useState("");
-    const [jenisKelamin,setJenisKelamin] = useState("");
-    const [alamat,setAlamat] = useState("");
-    const [keterangan,setKeterangan] = useState("");
-    const [gambar,setGambar] = useState("");
+    // const [name,setName] = useState("");
+    // const [nomorHP,setNomorHP] = useState("");
+    // const [nomorRek,setNomorRek] = useState("");
+    // const [jenisKelamin,setJenisKelamin] = useState("");
+    // const [alamat,setAlamat] = useState("");
+    // const [keterangan,setKeterangan] = useState("");
+    // const [gambar,setGambar] = useState("");
+    const [name,setName] = useState(user.user.name);
+    const [nomorHP,setNomorHP] = useState(user.user.nomorHP);
+    const [nomorRek,setNomorRek] = useState(user.user.nomorRek);
+    const [jenisKelamin,setJenisKelamin] = useState(user.user.jenisKelamin);
+    const [alamat,setAlamat] = useState(user.user.alamat);
+    const [keterangan,setKeterangan] = useState(user.user.keterangan);
+    const [gambar,setGambar] = useState(user.img);
+    console.log(user.img);
+    
     
     const uploadImage = async(e) => {
         const file = e.target.files[0];

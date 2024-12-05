@@ -97,6 +97,7 @@ export const login = async(req,res) => {
                 }
             });
 
+            const adminId = adminRes.id;
             const kodeTokoAdm = adminRes.kodeTokoAdm;
 
             req.session.userEmail = user.email;
@@ -130,6 +131,7 @@ export const login = async(req,res) => {
                     name,
                     email,
                     kodeTokoAdm,
+                    adminId,
                     role
                 },
                 accessToken
@@ -234,10 +236,20 @@ export const me = async(req,res) => {
         }
 
         if (user && !admin && !sales) {
+            
+            const adminRes = await Admin.findOne({
+                where : {
+                    kodeTokoAdm : req.session.kodeTokoAdm
+                }
+            });
+
+            const base64Image = user.ProfilePicture.toString("base64");
         
             res.status(200).json({
                 message: "Login berhasil",
-                user
+                user,
+                img : `data:image/*;base64,${base64Image}`,
+                adminRes
             });
 
         }
