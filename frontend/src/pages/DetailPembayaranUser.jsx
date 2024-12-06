@@ -38,8 +38,6 @@ const DetailPembayaranUser = () => {
         setGambar(response.data.buktiPembayaran);
         setBarang(response.data.dataBarang);
         setStatusPembayaran(response.data.statusPembayaran);   
-        
-        console.log(response.data);
     }
 
     

@@ -17,7 +17,10 @@ const HeaderUser = () => {
     }, [dispatch]);
 
     const {user} = useSelector(state => state.auth);
+    const state = useSelector((state) => state.auth_2);
+    // console.log(state.user.sales.name);
 
+    const username = (user?.user?.name) || (state?.user?.sales?.name);
 
     const logout = () => {
         dispatch(LogOut());
@@ -36,7 +39,8 @@ const HeaderUser = () => {
 
                     <div className="logo-keterangan-user">
                         <h3>SELAMAT DATANG</h3>
-                        <p>{user.user && user.user.name}</p>
+                        <p>{username}</p>
+                        {/* <p>{(user.user && user.user.name) || (state.user.sales && state.user.sales.name)}</p> */}
                     </div>
 
                     <div className="control">

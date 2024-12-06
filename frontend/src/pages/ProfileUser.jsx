@@ -38,13 +38,13 @@ const ProfileUser = () => {
     // }
     
     
-    // const [name,setName] = useState("");
-    // const [nomorHP,setNomorHP] = useState("");
-    // const [nomorRek,setNomorRek] = useState("");
-    // const [jenisKelamin,setJenisKelamin] = useState("");
-    // const [alamat,setAlamat] = useState("");
-    // const [keterangan,setKeterangan] = useState("");
-    // const [gambar,setGambar] = useState("");
+    // const [name,setName] = useState(""); setName(user.user.name);
+    // const [nomorHP,setNomorHP] = useState("");setNomorHP(user.user.nomorHP);
+    // const [nomorRek,setNomorRek] = useState("");setNomorRek(user.user.nomorRek);
+    // const [jenisKelamin,setJenisKelamin] = useState("");setJenisKelamin(user.user.jenisKelamin);
+    // const [alamat,setAlamat] = useState("");setAlamat(user.user.alamat);
+    // const [keterangan,setKeterangan] = useState("");setKeterangan(user.user.keterangan);
+    // const [gambar,setGambar] = useState("");setGambar(user.user.gambar);
     const [name,setName] = useState(user.user.name);
     const [nomorHP,setNomorHP] = useState(user.user.nomorHP);
     const [nomorRek,setNomorRek] = useState(user.user.nomorRek);
@@ -52,7 +52,7 @@ const ProfileUser = () => {
     const [alamat,setAlamat] = useState(user.user.alamat);
     const [keterangan,setKeterangan] = useState(user.user.keterangan);
     const [gambar,setGambar] = useState(user.img);
-    console.log(user.img);
+    // console.log(user.img);
     
     
     const uploadImage = async(e) => {

@@ -66,8 +66,8 @@ function App() {
 
           <Route path="/login/sales" element={<LoginSales />} />
           <Route path="/daftar/sales" element={<DaftarSales />} />
-          <Route path="/sales/profilesales" element={<ProfileSales />}/>
-          <Route path="/sales" element={<DashboardSales />}/>
+          <Route path="/sales/profilesales/:id" element={<ProfileSales />}/>
+          <Route path="/sales/:id" element={<DashboardSales />}/>
           <Route path="/sales/riwayatpembayaransales/:id" element={<RiwayatPembayaranSales />}/>
           <Route path="/sales/detailpembayaransales/:id" element={<DetailPembayaranSales />}/>
           <Route path="/sales/keranjangsales/:id" element={<KeranjangSales />}/>

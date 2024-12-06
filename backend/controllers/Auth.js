@@ -255,10 +255,13 @@ export const me = async(req,res) => {
         }
 
         if (!user && !admin && sales) {
+
+            const base64Image = sales.ProfilePicture.toString("base64");
         
             res.status(200).json({
                 message: "Login berhasil",
-                sales
+                sales,
+                img : `data:image/*;base64,${base64Image}`,
             });
 
         }
