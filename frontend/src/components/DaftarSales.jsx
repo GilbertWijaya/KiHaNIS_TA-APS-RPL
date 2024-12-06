@@ -1,10 +1,44 @@
 /* eslint-disable no-unused-vars */
 
 import "../style/DaftarSales.css";
-import { Link } from "react-router-dom";
-
+import { Link,useParams,useNavigate } from "react-router-dom";
+import { useState,useEffect } from "react";
+import axios from "axios";
 
 function DaftarSales() {
+
+    const [name, setName] = useState("");
+    const [nomorRek, setNomorRek] = useState("");
+    const [kodeTokoAdm,setKodeTokoAdm] = useState("");
+    const [email,setEmail] = useState("");
+    const [password,setPassword] = useState("");
+
+    const navigate = useNavigate();
+
+    const register = async(e) => {
+
+        e.preventDefault();
+
+        try {
+            
+            await axios.post("http://localhost:1221/api/sales",{
+                name,
+                kodeTokoAdm,
+                nomorRek,
+                email,
+                password
+            });
+    
+            navigate("/login/sales");
+
+        } catch (error) {
+            if (error) {
+                console.log(error.message);
+            }
+        }
+
+    }
+
     return (
 
         <>
@@ -16,7 +50,7 @@ function DaftarSales() {
                 </div>
 
                 <div className="content-daftarsales">
-                    <form action="">
+                    <form action="" onSubmit={register}>
 
                         <h1 className="text-white keterangan-daftarsales">DAFTAR SALES</h1>
 
@@ -24,23 +58,31 @@ function DaftarSales() {
                             
                             <label htmlFor="nama" className="label-daftarsales">Nama</label>
                             <div className="control-daftarsales">
-                                <input type="text" id="nama" className="input-daftarsales" placeholder="nama" required/>
+                                <input type="text" id="nama" className="input-daftarsales" value={name} onChange={(e) => setName(e.target.value)} placeholder="nama" required/>
                             </div>
                         </div>
 
-                        <div className="field-daftarsales">
+                        {/* <div className="field-daftarsales">
                             
                             <label htmlFor="nomorHP" className="label-daftarsales">Nomor Handphone</label>
                             <div className="control-daftarsales">
                                 <input type="text" id="nomorHP" className="input-daftarsales" placeholder="081112345678" required/>
                             </div>
-                        </div>
+                        </div> */}
 
                         <div className="field-daftarsales">
                             
                             <label htmlFor="nomorRek" className="label-daftarsales">Nomor Rekening</label>
                             <div className="control-daftarsales">
-                                <input type="text" id="nomorRek" className="input-daftarsales" placeholder="0370123048" required/>
+                                <input type="text" id="nomorRek" className="input-daftarsales" value={nomorRek} onChange={(e) => setNomorRek(e.target.value)} placeholder="0370123048" required/>
+                            </div>
+                        </div>
+
+                        <div className="field-daftarsales">
+                            
+                            <label htmlFor="kodeTokoAdm" className="label-daftarsales">Kode Toko Admin</label>
+                            <div className="control-daftarsales">
+                                <input type="text" id="kodeTokoAdm" className="input-daftarsales" value={kodeTokoAdm} onChange={(e) => setKodeTokoAdm(e.target.value)} placeholder="g2800t" required/>
                             </div>
                         </div>
 
@@ -48,7 +90,7 @@ function DaftarSales() {
                             
                             <label htmlFor="email" className="label-daftarsales">Email</label>
                             <div className="control-daftarsales">
-                                <input type="text" id="email" className="input-daftarsales" placeholder="email" required/>
+                                <input type="text" id="email" className="input-daftarsales" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" required/>
                             </div>
                         </div>
 
@@ -56,12 +98,12 @@ function DaftarSales() {
 
                             <label htmlFor="password" className="label-daftarsales">Password</label>
                             <div className="control-daftarsales">
-                                <input type="password" id="password" className="input-daftarsales" placeholder="********" required/>
+                                <input type="password" id="password" className="input-daftarsales" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="********" required/>
                             </div>
                         </div>
 
                         <div className="field-daftarsales">
-                            <button className="btn-submit-daftarsales">Login</button>
+                            <button className="btn-submit-daftarsales" type="submit">REGISTER</button>
                         </div>
                         
                     </form>

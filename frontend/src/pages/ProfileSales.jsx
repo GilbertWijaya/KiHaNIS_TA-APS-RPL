@@ -19,7 +19,7 @@ const ProfileSales = () => {
     },[dispatch]);
 
     const {user} = useSelector((state) => state.auth);
-    console.log(user);
+    // console.log(user);
     
 
     const [name,setName] = useState(user.sales?.name);

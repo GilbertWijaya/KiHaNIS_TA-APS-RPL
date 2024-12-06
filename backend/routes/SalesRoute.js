@@ -12,7 +12,7 @@ const upload = multer({
 
 router.get("/sales",verifyAdmin,getSales);
 router.get("/sales/:id",verifyAdmin,getSalesById);
-router.post("/sales",verifyAdmin,createSales);
+router.post("/sales",createSales);
 router.patch("/sales/:id",upload.single("ProfilePicture"),updateSales);
 router.delete("/sales/:id",verifyAdmin,deleteSales);
 

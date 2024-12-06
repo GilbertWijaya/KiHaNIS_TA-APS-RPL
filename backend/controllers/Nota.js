@@ -110,6 +110,41 @@ export const getNotaByUserId = async(req,res) => {
     }
 
 }
+export const getNotaByIdSalesNota = async(req,res) => {
+
+    try {
+
+        const response = await Nota.findOne({
+            where : {
+                id : req.params.id
+            },
+            include : [{
+                model : Admin,
+                attributes : ['name',"kodeTokoAdm","nomorHP","nomorRek"]
+            }]
+        });
+        
+
+        const base64Image = response.buktiPembayaran.toString('base64');
+            
+        res.status(200).json({
+            id: response.id,
+            namaPembeli: response.namaPembeli,
+            namaSales : response.namaSales,
+            kodeTokoAdm : response.kodeTokoAdm,
+            dataBarang: response.dataBarang,
+            buktiPembayaran : `data:image/*;base64,${base64Image}`,
+            statusPembayaran : response.statusPembayaran,
+            saleId : response.saleId,
+            adminId : response.adminId
+                
+        });
+
+    } catch (error) {
+        res.status(500).json({message : `Gagal mengambil data nota ${error.message}`});
+    }
+
+}
 export const getNotaByIdNota = async(req,res) => {
 
     try {
@@ -151,17 +186,32 @@ export const getNotaBySalesId = async(req,res) => {
 
     try {
 
-        const response = await Nota.findOne({
+        const response = await Nota.findAll({
             where : {
-                saleId : req.session.userId
+                saleId : req.params.id
             },
             include : [{
                 model : Admin,
                 attributes : ['name',"kodeTokoAdm","nomorHP","nomorRek"]
             }]
         });
+
+        const formattedResponse = response.map((nota) => {
+            const base64Image = nota.buktiPembayaran.toString('base64');
+            return {
+                id: nota.id,
+                namaPembeli: nota.namaPembeli,
+                namaSales : nota.namaSales,
+                kodeTokoAdm : nota.kodeTokoAdm,
+                dataBarang: nota.dataBarang,
+                buktiPembayaran : `data:image/*;base64,${base64Image}`,
+                statusPembayaran : nota.statusPembayaran,
+                saleId : nota.saleId,
+                adminId : nota.adminId
+            };
+        });
         
-        res.status(200).json(response);
+        res.status(200).json(formattedResponse);
 
     } catch (error) {
         res.status(500).json({message : `Gagal mengambil data nota ${error.message}`});

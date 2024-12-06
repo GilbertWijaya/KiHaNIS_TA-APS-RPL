@@ -1,20 +1,27 @@
 import Sales from "../models/SalesModel.js";
+import Admin from "../models/AdminModel.js";
 
 // create sales
 export const createSales = async(req,res) =>{
 
-    const {name,nomorHP,password,email,nomorRek} = req.body;
+    const {name,kodeTokoAdm,password,email,nomorRek} = req.body;
     
+    const response = await Admin.findOne({
+        where : {
+            kodeTokoAdm : kodeTokoAdm
+        }
+    })
+
     try {
         
         await Sales.create({
             name,   
-            nomorHP,
             nomorRek,
+            nomorHP : "isi dulu",
             email,
             password,
-            adminId : req.adminId,
-            kodeTokoAdm : req.kodeTokoAdm
+            adminId : response.id,
+            kodeTokoAdm : kodeTokoAdm
         });
 
         res.status(201).json({message : "Sales created successfully"});
