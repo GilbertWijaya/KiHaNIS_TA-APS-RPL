@@ -12,7 +12,7 @@ export const createProduct = async(req,res) =>{
     try {
         const admin = await Admin.findOne({
             where : {
-                refreshToken : `${req.cookies.refreshToken}`
+                kodeTokoAdm : req.params.id
             }
         });
 
@@ -26,8 +26,8 @@ export const createProduct = async(req,res) =>{
             kodeBarang,
             keterangan,
             ProductPicture,
-            kodeTokoAdm : req.kodeTokoAdm ? req.kodeTokoAdm : admin.kodeTokoAdm,
-            adminId : req.adminId ? req.adminId : admin.id
+            kodeTokoAdm :  admin.kodeTokoAdm,
+            adminId : admin.id
         });
 
         res.status(201).json({message : "Product created successfully"});
@@ -103,6 +103,53 @@ export const getProductById = async(req,res) =>{
 
 }
 
+export const getProductByAdminId = async(req,res) =>{
+
+    try {
+        
+        const response = await Products.findOne({
+            where : {
+                id : req.params.id
+            }
+        });
+
+        // console.log(response);
+        
+        const base64Image = response.ProductPicture?.toString('base64');
+
+        res.status(200).json({
+            id : response.id,
+            namaBarang : response.namaBarang,
+            hargaBarang : response.hargaBarang,
+            kodeBarang : response.kodeBarang,
+            keterangan : response.keterangan,
+            ProductPicture : `data:image/*;base64,${base64Image}`,
+            kodeTokoAdm : response.kodeTokoAdm,
+            adminId : response.adminId
+        });
+
+        // const formattedResponse = response.map((product) => {
+        //     const base64Image = product.ProductPicture.toString('base64');
+        //     return {
+        //         id: product.id,
+        //         namaBarang: product.namaBarang,
+        //         hargaBarang: product.hargaBarang,
+        //         kodeBarang: product.kodeBarang,
+        //         keterangan: product.keterangan,
+        //         ProductPicture: `data:image/*;base64,${base64Image}`,
+        //         kodeTokoAdm: product.kodeTokoAdm,
+        //         adminId: product.adminId
+        //     };
+        // });
+
+        // res.status(200).json(formattedResponse);
+
+    } catch (error) {
+        res.status(500).json({message : `Error getting products ${error.message}`});
+    }
+
+}
+
 export const getProductByKodeToko = async(req,res) =>{
 
     try {
@@ -130,7 +177,7 @@ export const updateProduct = async(req,res) =>{
 
     const response = await Products.findOne({
         where : {
-            kodeTokoAdm : req.params.id
+            id : req.params.id
         }
     });
 
@@ -161,7 +208,7 @@ export const updateProduct = async(req,res) =>{
             ProductPicture : picture
         },{
             where : {
-                kodeTokoAdm : response.kodeTokoAdm
+                id: response.id
             }
         });
 
@@ -178,7 +225,7 @@ export const deleteProduct = async(req,res) =>{
 
     const response = await Products.findOne({
         where : {
-            kodeTokoAdm : req.kodeTokoAdm
+            id : req.params.id
         }
     });
 
@@ -186,17 +233,17 @@ export const deleteProduct = async(req,res) =>{
         return res.status(404).json({messsage: "Product not found"});
     }
 
-    const isMatch = req.params.id === response.namaBarang;
+    // const isMatch = req.params.id === response.namaBarang;
 
-    if (!isMatch) {
-        return res.status(401).json({message:"Unauthorized to delete this product"});
-    }
+    // if (!isMatch) {
+    //     return res.status(401).json({message:"Unauthorized to delete this product"});
+    // }
     
     try {
         
         await Products.destroy({
             where : {
-                [Op.and] : [{namaBarang : req.params.id},{kodeTokoAdm : response.kodeTokoAdm}]
+                id : response.id
             }
         });
 

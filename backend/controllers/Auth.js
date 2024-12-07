@@ -227,10 +227,13 @@ export const me = async(req,res) => {
         }
 
         if (!user && admin && !sales) {
+
+            const base64Image = admin.ProfilePicture?.toString("base64");
             
             res.status(200).json({
                 message: "Login berhasil",
-                admin
+                admin,
+                img : `data:image/*;base64,${base64Image}`
             });
 
         }

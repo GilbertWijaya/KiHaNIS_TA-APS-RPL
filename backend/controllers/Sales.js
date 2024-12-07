@@ -60,7 +60,25 @@ export const getSalesById = async(req,res) =>{
             }
         });
 
-        res.status(200).json(response);
+        const formattedResponse = response.map((sales) => {
+            const base64Image = sales.ProfilePicture.toString('base64');
+
+            return {
+                id : sales.id,
+                name : sales.name,
+                nomorHP : sales.nomorHP,
+                nomorRek : sales.nomorRek,
+                email : sales.email,
+                jenisKelamin : sales.jenisKelamin,
+                alamat : sales.alamat,
+                keterangan : sales.keterangan,
+                profilePicture : `data:image/*;base64,${base64Image}`,
+                kodeTokoAdm : sales.kodeTokoAdm
+            }
+
+        })
+
+        res.status(200).json(formattedResponse);
 
     } catch (error) {
         res.status(500).json({message : `Error getting Sales by id ${error.message}`});

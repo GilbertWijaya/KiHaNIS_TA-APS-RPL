@@ -46,14 +46,14 @@ function App() {
 
           <Route path="/login/admin" element={<LoginAdmin />} />
           <Route path="/daftar/admin" element={<DaftarAdmin />} />
-          <Route path="/admin" element={<DashboardAdmin />} />
-          <Route path="/admin/datasalesadmin" element={<DataSalesAdmin />} />
+          <Route path="/admin/:id" element={<DashboardAdmin />} />
+          <Route path="/admin/datasalesadmin/:id" element={<DataSalesAdmin />} />
           <Route path="/admin/editdatasales/:id" element={<EditDataSales />} />
           <Route path="/admin/tambahdatasales" element={<TambahDataSales />} />
-          <Route path="/admin/databarangadmin" element={<DataBarangAdmin />} />
+          <Route path="/admin/databarangadmin/:id" element={<DataBarangAdmin />} />
           <Route path="/admin/tambahdatabarang" element={<TambahDataBarang />} />
           <Route path="/admin/editdatabarang/:id" element={<EditDataBarang />} />
-          <Route path="/admin/datapembelianadmin" element={<DataPembelianAdmin />} />
+          <Route path="/admin/datapembelianadmin/:id" element={<DataPembelianAdmin />} />
           <Route path="/admin/detailpembelianadmin/:id" element={<DetailPembelianAdmin />} />
 
           <Route path="/login/user" element={<LoginUserComp />} />

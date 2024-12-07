@@ -1,10 +1,45 @@
 /* eslint-disable no-unused-vars */
 
 import "../style/DaftarAdmin.css";
-import { Link } from "react-router-dom";
-
+import { Link,useNavigate } from "react-router-dom";
+import axios from "axios";
+// import { useDispatch } from "react-redux";
+import { useState } from "react";
 
 function DaftarAdmin() {
+
+    const [name,setName] = useState("");
+    const [nomorHP,setNomorHP] = useState("");
+    const [nomorRek,setNomorRek] = useState("");
+    const [email,setEmail] = useState("");
+    const [password,setPassword] = useState("");
+
+    const navigate = useNavigate();
+
+    const createAdmin = async(e) => {
+
+        e.preventDefault();
+
+        try {
+            
+            await axios.post(`http://localhost:1221/api/admin`,{
+                name,
+                nomorHP,
+                nomorRek,
+                email,
+                password
+            });
+
+            navigate("/");
+
+        } catch (error) {
+            if (error) {
+                console.log(error.response);
+            }
+        }
+
+    }
+
     return (
 
         <>
@@ -16,7 +51,7 @@ function DaftarAdmin() {
                 </div>
 
                 <div className="content-daftaradmin">
-                    <form action="">
+                    <form action="" onSubmit={createAdmin}>
 
                         <h1 className="text-white keterangan-daftaradmin">DAFTAR ADMIN</h1>
 
@@ -24,7 +59,7 @@ function DaftarAdmin() {
                             
                             <label htmlFor="nama" className="label-daftaradmin">Nama</label>
                             <div className="control-daftaradmin">
-                                <input type="text" id="nama" className="input-daftaradmin" placeholder="nama" required/>
+                                <input type="text" id="nama" value={name} onChange={(e) => setName(e.target.value)} className="input-daftaradmin" placeholder="nama" required/>
                             </div>
                         </div>
 
@@ -32,7 +67,7 @@ function DaftarAdmin() {
                             
                             <label htmlFor="nomorHP" className="label-daftaradmin">Nomor Handphone</label>
                             <div className="control-daftaradmin">
-                                <input type="text" id="nomorHP" className="input-daftaradmin" placeholder="081112345678" required/>
+                                <input type="text" id="nomorHP" className="input-daftaradmin" value={nomorHP} onChange={(e) => setNomorHP(e.target.value)} placeholder="081112345678" required/>
                             </div>
                         </div>
 
@@ -40,7 +75,7 @@ function DaftarAdmin() {
                             
                             <label htmlFor="nomorRek" className="label-daftaradmin">Nomor Rekening</label>
                             <div className="control-daftaradmin">
-                                <input type="text" id="nomorRek" className="input-daftaradmin" placeholder="0370123048" required/>
+                                <input type="text" id="nomorRek" className="input-daftaradmin" value={nomorRek} onChange={(e) => setNomorRek(e.target.value)} placeholder="0370123048" required/>
                             </div>
                         </div>
 
@@ -48,7 +83,7 @@ function DaftarAdmin() {
                             
                             <label htmlFor="email" className="label-daftaradmin">Email</label>
                             <div className="control-daftaradmin">
-                                <input type="text" id="email" className="input-daftaradmin" placeholder="email" required/>
+                                <input type="text" id="email" className="input-daftaradmin" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" required/>
                             </div>
                         </div>
 
@@ -56,12 +91,12 @@ function DaftarAdmin() {
 
                             <label htmlFor="password" className="label-daftaradmin">Password</label>
                             <div className="control-daftaradmin">
-                                <input type="password" id="password" className="input-daftaradmin" placeholder="********" required/>
+                                <input type="password" id="password" className="input-daftaradmin" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="********" required/>
                             </div>
                         </div>
 
                         <div className="field-daftaradmin">
-                            <button className="btn-submit-daftaradmin">Login</button>
+                            <button className="btn-submit-daftaradmin" type="submit">Register</button>
                         </div>
                         
                     </form>

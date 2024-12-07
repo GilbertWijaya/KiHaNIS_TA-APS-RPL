@@ -8,4 +8,5 @@ export default configureStore({
         auth : authReducer,
         auth_2 : authReducer2 
     }
+
 });

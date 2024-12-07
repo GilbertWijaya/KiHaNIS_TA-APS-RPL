@@ -18,7 +18,7 @@ const ProfileSales = () => {
         dispatch(getMe());
     },[dispatch]);
 
-    const {user} = useSelector((state) => state.auth);
+    const {user} = useSelector((state) => state.auth_2);
     // console.log(user);
     
 

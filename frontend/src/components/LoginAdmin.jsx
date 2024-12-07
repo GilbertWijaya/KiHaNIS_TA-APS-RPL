@@ -1,9 +1,37 @@
 /* eslint-disable no-unused-vars */
 
 import "../style/LoginAdmin.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import { useState,useEffect } from "react";
+import { LoginNonUser } from "../features/authSlice2";
+import { useDispatch,useSelector } from "react-redux";
 
 function LoginAdmin() {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const {user,isError,isSuccess,isLoading,message} = useSelector((state) => state.auth_2);
+
+    useEffect(() => {
+
+        if (user || isSuccess) {
+            navigate(`/admin/${user.admin.kodeTokoAdm}`);
+        }
+
+    },[user,isError,isLoading,message])
+
+    const Auth = (e) => {
+
+        e.preventDefault();
+
+        dispatch(LoginNonUser({email,password}));
+
+    }
+
     return (
 
         <>
@@ -15,7 +43,7 @@ function LoginAdmin() {
                 </div>
 
                 <div className="content-loginadmin">
-                    <form action="">
+                    <form action="" onSubmit={Auth}>
 
                         <h1 className="text-white keterangan-loginadmin">LOGIN ADMIN</h1>
 
@@ -23,7 +51,7 @@ function LoginAdmin() {
                             
                             <label htmlFor="email" className="label-loginadmin">Email</label>
                             <div className="control-loginadmin">
-                                <input type="text" className="input-loginadmin" placeholder="email" required/>
+                                <input type="text" className="input-loginadmin" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" required/>
                             </div>
                         </div>
 
@@ -31,12 +59,12 @@ function LoginAdmin() {
 
                             <label htmlFor="password" className="label-loginadmin">Password</label>
                             <div className="control-loginadmin">
-                                <input type="password" className="input-loginadmin" placeholder="********" required/>
+                                <input type="password" className="input-loginadmin" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="********" required/>
                             </div>
                         </div>
 
                         <div className="field-loginadmin">
-                            <button className="btn-submit-loginadmin">Login</button>
+                            <button className="btn-submit-loginadmin" type="submit">Login</button>
                         </div>
                         
                     </form>

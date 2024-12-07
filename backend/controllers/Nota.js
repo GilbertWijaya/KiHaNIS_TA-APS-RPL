@@ -223,17 +223,33 @@ export const getNotaByAdminId = async(req,res) => {
 
     try {
 
-        const response = await Nota.findOne({
+        const response = await Nota.findAll({
             where : {
-                [Op.and] : [{adminId : req.session.userId}, {kodeTokoAdm : req.session.kodeTokoAdm}]
+                kodeTokoAdm : req.params.id
             },
             include : [{
                 model : Admin,
                 attributes : ['name',"kodeTokoAdm","nomorHP","nomorRek"]
             }]
         });
+
+        const formattedResponse = response.map((nota) => {
+            const base64Image = nota.buktiPembayaran.toString('base64');
+            return {
+                id: nota.id,
+                namaPembeli: nota.namaPembeli,
+                namaSales : nota.namaSales,
+                kodeTokoAdm : nota.kodeTokoAdm,
+                dataBarang: nota.dataBarang,
+                buktiPembayaran : `data:image/*;base64,${base64Image}`,
+                statusPembayaran : nota.statusPembayaran,
+                saleId : nota.saleId,
+                userId : nota.userId,
+                adminId : nota.adminId
+            };
+        });
         
-        res.status(200).json(response);
+        res.status(200).json(formattedResponse);
 
     } catch (error) {
         res.status(500).json({message : `Gagal mengambil data nota ${error.message}`});
@@ -278,11 +294,12 @@ export const updateNota = async(req,res) => {
 
     try {
 
-        const {statusPembayaran} = req.body;
+        // const {statusPembayaran} = req.body;
         
         const nota = await Nota.findOne({
             where : {
-                [Op.and] : [{id : req.params.id}, {kodeTokoAdm : req.session.kodeTokoAdm}]
+                // [Op.and] : [{id : req.params.id}, {kodeTokoAdm : req.session.kodeTokoAdm}]
+                id : req.params.id
             }
         });
 
@@ -291,10 +308,11 @@ export const updateNota = async(req,res) => {
         }
 
         await Nota.update({
-            statusPembayaran
+            statusPembayaran : "1"
         },{
             where : {
-                [Op.and] : [{id : req.params.id}, {kodeTokoAdm : req.session.kodeTokoAdm}]
+                // [Op.and] : [{id : req.params.id}, {kodeTokoAdm : req.session.kodeTokoAdm}]
+                id : req.params.id
             }
         });
 

@@ -14,10 +14,10 @@ router.get("/nota/user/:id",getNotaByUserId);
 router.get("/nota/user/bynota/:id",getNotaByIdNota);
 router.get("/nota/sales/bynota/:id",getNotaByIdSalesNota);
 router.get("/nota/sales/:id",getNotaBySalesId);
-router.get("/nota/admin",getNotaByAdminId);
+router.get("/nota/admin/:id",getNotaByAdminId);
 router.get("/nota/getnota/:id",getNotaById);
 router.post("/nota",upload.single("buktiPembayaran"),createNota);
-router.patch("/nota/:id",AdminOnly,verifyAdmin,updateNota);
+router.patch("/nota/:id",updateNota);
 router.delete("/nota/:id",AdminOnly,verifyAdmin,deleteNota);
 
 export default router;
