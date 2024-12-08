@@ -11,20 +11,20 @@ const LoginUserComp = () => {
     const [email,setEmail] = useState("");
     const [kodeTokoAdm,setKodeTokoAdm] = useState("");
     const [password,setPassword] = useState("");
-    const {user,isError,isSucess,isLoading,message} = useSelector((state) => state.auth);
+    const {user,isError,isSuccess,isLoading,message} = useSelector((state) => state.auth);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     useEffect(() => {
 
-        if (user || isSucess) {
+        if (user || isSuccess) {
             navigate(`/user/${kodeTokoAdm}`);
         }
 
         // dispatch(reset());
 
-    },[user,isSucess,dispatch,navigate]);
+    },[user,isSuccess,dispatch,navigate]);
 
     const Auth = (e) => {
         e.preventDefault();

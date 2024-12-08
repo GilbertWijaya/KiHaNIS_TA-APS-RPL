@@ -37,7 +37,7 @@ const DetailPembelianAdmin = () => {
         setDataBarang(response.data.dataBarang);
         setGambar(response.data.buktiPembayaran);
 
-        console.log(response.data);
+        // console.log(response.data);
         
     }
 

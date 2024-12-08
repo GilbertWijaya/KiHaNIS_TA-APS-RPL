@@ -6,13 +6,21 @@ import { Link,useParams } from "react-router-dom";
 import axios from "axios";
 import { useState,useEffect } from "react";
 import { getMe } from "../features/authSlice.js";
-import { useSelector } from "react-redux";
+import { useSelector ,useDispatch} from "react-redux";
 
 const DashboardUser = () => {
 
     const [products,setProducts] = useState([]);
 
-    const {user} = useSelector((state) => state.auth);
+    const dispatch = useDispatch();
+
+    useEffect(() =>{
+        dispatch(getMe());
+    },[dispatch])
+
+    const {user} = useSelector(state => state.auth);
+    // console.log(user);
+    
 
     useEffect(() => {
         getProduct();
