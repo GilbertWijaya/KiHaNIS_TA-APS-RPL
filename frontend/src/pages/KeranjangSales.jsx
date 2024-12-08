@@ -11,17 +11,13 @@ import axios from "axios";
 const KeranjangSales = () => {
 
     const [namaPembeli,setNamaPembeli] = useState("");
+    const [alamatPembeli,setAlamatPembeli] = useState("");
     const [image,setImage] = useState("");
     const [cartItems,setCartItems] = useState([]);
-    
-    // console.log(cartItems);
-    
 
     const {id} = useParams();
     const {user} = useSelector((state) => state.auth_2);
-    // console.log(user.sales.name);
     
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -32,7 +28,10 @@ const KeranjangSales = () => {
     useEffect(() => {
         // fetch cart items from local storage
         const localCart = JSON.parse(localStorage.getItem("cart")) || [];
-        setCartItems(localCart);
+
+        const updatedCart = localCart.map((item) => ({...item,jumlahBarang : 1}))
+
+        setCartItems(updatedCart);
     }, []);
 
     const loadImage = (e) => {
@@ -42,17 +41,38 @@ const KeranjangSales = () => {
 
     // Fungsi untuk menghitung total harga
     const calculateTotal = () => {
-        return cartItems.reduce((total, item) => total + item.hargaBarang, 0);
+        return cartItems.reduce((total, item) => total + item.hargaBarang * item.jumlahBarang, 0);
     };
+
+    const handleJumlahChange = (index,value) =>{
+        const updatedCart = [...cartItems];
+        updatedCart[index].jumlahBarang = Math.max(1,Number(value));
+        setCartItems(updatedCart);
+    }
 
     const handleCheckout = async (e) => {
         e.preventDefault();
+
+        const totalBarang = calculateTotal();
+
+        const updatedCartItems = cartItems.map(({namaBarang,hargaBarang,jumlahBarang}) => ({
+            namaBarang,
+            hargaBarang,
+            jumlahBarang,
+        }))
+
+        const dataBarang = {
+            namaPembeli,
+            alamatPembeli,
+            items : updatedCartItems,
+            totalBarang,
+        }
 
         const formData = new FormData();
         formData.append("namaPembeli",namaPembeli);
         formData.append("namaSales",user.sales.name);
         formData.append("kodeTokoAdm", user.sales.kodeTokoAdm);
-        formData.append("dataBarang", JSON.stringify(cartItems + " " +  calculateTotal()));
+        formData.append("dataBarang", JSON.stringify(dataBarang));
         formData.append("buktiPembayaran", image);
         formData.append("saleId", id);
         formData.append("adminId",user.sales.adminId);
@@ -65,8 +85,6 @@ const KeranjangSales = () => {
                 }
             });
 
-            
-                
                 // Bersihkan local storage setelah checkout
                 localStorage.removeItem("cart");
                 setCartItems([]);
@@ -101,6 +119,13 @@ const KeranjangSales = () => {
                                 </div>
                             </div>
 
+                            <div className="keranjangsales-item">
+                                <label htmlFor="alamatpembeli" className="label-nama">ALAMAT PEMBELI</label>
+                                <div className="control">
+                                    <input type="text" id="alamatpembeli" value={alamatPembeli} onChange={(e) => {setAlamatPembeli(e.target.value)}} className="input-keranjangsales-nama" placeholder="alamat pembeli" required/>
+                                </div>
+                            </div>
+
                             {
                                 
                                 cartItems.map((item,index) => (
@@ -114,7 +139,7 @@ const KeranjangSales = () => {
                                             <h6>Rp {item.hargaBarang}</h6>
                                             {/* <label htmlFor="jumlahbarang">Jumlah Barang</label> */}
                                             <div className="control">
-                                                <input type="number" id="jumlahbarang" className="input-keranjangsales" min={1}  placeholder="1" required/>
+                                                <input type="number" id="jumlahbarang" value={item.jumlahBarang} onChange={(e) => handleJumlahChange(index,e.target.value)} className="input-keranjangsales" min={1}  placeholder="1" required/>
                                             </div>
 
                                         </div>

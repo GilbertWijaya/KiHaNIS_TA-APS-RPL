@@ -15,6 +15,8 @@ function LoginAdmin() {
     const dispatch = useDispatch();
 
     const {user,isError,isSuccess,isLoading,message} = useSelector((state) => state.auth_2);
+    // console.log(user.admin);
+    
 
     useEffect(() => {
 

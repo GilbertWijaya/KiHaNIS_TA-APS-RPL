@@ -16,21 +16,49 @@ const DashboardAdmin = () => {
 
     const {id} = useParams();
 
+    const {user,isSuccess} =  useSelector((state) => state.auth_2);
+
     useEffect(() => {
         dispatch(getMe());
+        // setName(user.admin.name);
     }, [dispatch]);
+    
+    
+    useEffect(() => {
 
-    const {user} =  useSelector((state) => state.auth_2);
+        if(user && isSuccess){
 
-    const [name,setName] = useState(user && user?.admin?.name);
-    const [nomorHP,setNomorHP] = useState(user.admin && user?.admin?.nomorHP);
-    const [nomorRek,setNomorRek] = useState(user?.admin?.nomorRek);
-    const [email,setEmail] = useState(user?.admin?.email);
-    const [kodeTokoAdm,setKodeTokoAdm] = useState(user?.admin?.kodeTokoAdm);
-    const [jenisKelamin,setJenisKelamin] = useState(user?.admin?.jenisKelamin);
-    const [alamat,setAlamat] = useState(user?.admin?.alamat);
-    const [keterangan,setKeterangan] = useState(user?.admin?.keterangan);
-    const [gambar,setGambar] = useState(user?.img);
+            setName(user.admin.name);
+            setNomorHP(user.admin.nomorHP);
+            setNomorRek(user.admin.nomorRek);
+            setEmail(user.admin.email);
+            setKodeTokoAdm(user.admin.kodeTokoAdm);
+            setJenisKelamin(user.admin.jenisKelamin);
+            setAlamat(user.admin.alamat);
+            setKeterangan(user.admin.keterangan);
+            setGambar(user.img);
+
+        }
+    },[user,isSuccess])
+
+    // const [name,setName] = useState(user.admin.name);
+    // const [nomorHP,setNomorHP] = useState("");
+    // const [nomorRek,setNomorRek] = useState("");
+    // const [email,setEmail] = useState(user.admin.email);
+    // const [kodeTokoAdm,setKodeTokoAdm] = useState(user.admin.kodeTokoAdm);
+    // const [jenisKelamin,setJenisKelamin] = useState(user.admin.jenisKelamin);
+    // const [alamat,setAlamat] = useState(user.admin.alamat);
+    // const [keterangan,setKeterangan] = useState(user.admin.keterangan);
+    // const [gambar,setGambar] = useState(user.img);
+    const [name,setName] = useState("");
+    const [nomorHP,setNomorHP] = useState("");
+    const [nomorRek,setNomorRek] = useState("");
+    const [email,setEmail] = useState("");
+    const [kodeTokoAdm,setKodeTokoAdm] = useState("");
+    const [jenisKelamin,setJenisKelamin] = useState("");
+    const [alamat,setAlamat] = useState("");
+    const [keterangan,setKeterangan] = useState("");
+    const [gambar,setGambar] = useState("");
 
     const uploadImage = async(e) => {
         const file = e.target.files[0];

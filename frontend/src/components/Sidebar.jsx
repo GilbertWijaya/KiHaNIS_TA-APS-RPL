@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import "../style/Sidebar.css";
 import { Link,useParams } from "react-router-dom";
-import { getMe } from "../features/authSlice2";
+import { getMe } from "../features/authSlice";
 import { useDispatch,useSelector } from "react-redux";
 import { useEffect } from "react";
 

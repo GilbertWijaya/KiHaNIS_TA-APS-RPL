@@ -26,14 +26,19 @@ const DetailPembelianAdmin = () => {
     const [dataBarang,setDataBarang] = useState("");
     const [gambar,setGambar] = useState("");
 
+    
+
     const getNotaById = async() => {
-        const response = await axios.get(`http://localhost:1221/api/nota/user/bynota/${id}`);
+        const response = await axios.get(`http://localhost:1221/api/nota/sales/bynota/${id}`);
         
         setNamaPembeli(response.data.namaPembeli);
         setNamaSales(response.data.namaSales);
         setStatusPembayaran(response.data.statusPembayaran);
         setDataBarang(response.data.dataBarang);
         setGambar(response.data.buktiPembayaran);
+
+        console.log(response.data);
+        
     }
 
     useEffect(() => {

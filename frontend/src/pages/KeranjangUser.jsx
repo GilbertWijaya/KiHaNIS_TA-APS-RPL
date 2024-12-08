@@ -16,6 +16,9 @@ const KeranjangUser = () => {
     const {user} = useSelector((state) => state.auth);
     // console.log(user.adminRes.id);
     
+    // console.log(user.user.alamat);
+    
+
     useEffect(() => {
         dispatch(getMe());
     },[dispatch])
@@ -27,7 +30,10 @@ const KeranjangUser = () => {
     useEffect(() => {
         // fetch cart items from local storage
         const localCart = JSON.parse(localStorage.getItem("cart")) || [];
-        setCartItems(localCart);
+
+        const updatedCart = localCart.map((item) => ({...item,jumlahBarang : 1}));
+
+        setCartItems(updatedCart);
     }, []);
 
     const loadImage = (e) => {
@@ -37,21 +43,39 @@ const KeranjangUser = () => {
 
     // Fungsi untuk menghitung total harga
     const calculateTotal = () => {
-        return cartItems.reduce((total, item) => total + item.hargaBarang, 0);
+        return cartItems.reduce((total, item) => total + item.hargaBarang * item.jumlahBarang, 0);
     };
+
+    const handleJumlahChange = (index,value) => {
+        const updatedCart = [...cartItems];
+        updatedCart[index].jumlahBarang = Math.max(1,Number(value));
+        setCartItems(updatedCart);
+    }
 
     const handleCheckout = async (e) => {
         e.preventDefault();
 
-        // if (cartItems.length === 0) {
-        //     alert("Keranjang Anda kosong!");
-        //     return;
-        // }
+        const totalBarang = calculateTotal();
+
+        const updatedCartItems = cartItems.map(({namaBarang,hargaBarang,jumlahBarang}) => ({
+            namaBarang,
+            hargaBarang,
+            jumlahBarang,
+        }))
+
+        // console.log(updatedCartItems[0].namaBarang.namaBarang);
+        
+
+        const dataBarang = {
+            items : updatedCartItems,
+            alamat : user.user.alamat,
+            totalBarang,
+        }
 
         const formData = new FormData();
         formData.append("namaPembeli",user.user.name);
         formData.append("kodeTokoAdm", user.user.kodeTokoAdm);
-        formData.append("dataBarang", JSON.stringify(cartItems + " " +  calculateTotal()));
+        formData.append("dataBarang", JSON.stringify(dataBarang));
         formData.append("buktiPembayaran", image);
         formData.append("userId", id);
         formData.append("adminId",user.adminRes.id);
@@ -106,7 +130,7 @@ const KeranjangUser = () => {
                                         <h6>Rp {item.hargaBarang}</h6>
                                         {/* <label htmlFor="jumlahbarang">Jumlah Barang</label> */}
                                         <div className="control">
-                                            <input type="number" id="jumlahbarang" className="input-keranjanguser" min={1}  placeholder="1" required/>
+                                            <input type="number" id="jumlahbarang" className="input-keranjanguser" value={item.jumlahBarang} onChange={(e) => handleJumlahChange(index,e.target.value)} min={1}  placeholder="1" required/>
                                         </div>
 
                                     </div>
