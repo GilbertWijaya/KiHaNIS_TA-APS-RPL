@@ -2,5 +2,3 @@
 node_modules
 index.js
 *.rest
-package.json
-package-lock.json
