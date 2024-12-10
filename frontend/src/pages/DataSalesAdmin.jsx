@@ -70,9 +70,9 @@ const DataSalesAdmin = () => {
 
                         }
 
-                        <div className="control">
+                        {/* <div className="control">
                             <Link className="btn-tambah-datasales" to="/admin/tambahdatasales">Tambah Data Sales</Link>
-                        </div>
+                        </div> */}
 
                     </div>
 

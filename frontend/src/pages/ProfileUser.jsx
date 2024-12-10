@@ -20,31 +20,7 @@ const ProfileUser = () => {
         dispatch(getMe());
     },[dispatch])
 
-    useEffect(() => {
-        // getProfile();
-    },[id])
 
-    
-
-    // const getProfile = async() => {
-    //     const response = await axios.get(`http://localhost:1221/api/users/${id}`);
-    //     setName(response.data.name);
-    //     setNomorHP(response.data.nomorHP);
-    //     setNomorRek(response.data.nomorRek);
-    //     setJenisKelamin(response.data.jenisKelamin);
-    //     setAlamat(response.data.alamat);
-    //     setKeterangan(response.data.keterangan);
-    //     setGambar(response.data.ProfilePicture);
-    // }
-    
-    
-    // const [name,setName] = useState(""); setName(user.user.name);
-    // const [nomorHP,setNomorHP] = useState("");setNomorHP(user.user.nomorHP);
-    // const [nomorRek,setNomorRek] = useState("");setNomorRek(user.user.nomorRek);
-    // const [jenisKelamin,setJenisKelamin] = useState("");setJenisKelamin(user.user.jenisKelamin);
-    // const [alamat,setAlamat] = useState("");setAlamat(user.user.alamat);
-    // const [keterangan,setKeterangan] = useState("");setKeterangan(user.user.keterangan);
-    // const [gambar,setGambar] = useState("");setGambar(user.user.gambar);
     const [name,setName] = useState(user.user.name);
     const [nomorHP,setNomorHP] = useState(user.user.nomorHP);
     const [nomorRek,setNomorRek] = useState(user.user.nomorRek);

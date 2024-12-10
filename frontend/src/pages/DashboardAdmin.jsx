@@ -40,16 +40,7 @@ const DashboardAdmin = () => {
 
         }
     },[user,isSuccess])
-
-    // const [name,setName] = useState(user.admin.name);
-    // const [nomorHP,setNomorHP] = useState("");
-    // const [nomorRek,setNomorRek] = useState("");
-    // const [email,setEmail] = useState(user.admin.email);
-    // const [kodeTokoAdm,setKodeTokoAdm] = useState(user.admin.kodeTokoAdm);
-    // const [jenisKelamin,setJenisKelamin] = useState(user.admin.jenisKelamin);
-    // const [alamat,setAlamat] = useState(user.admin.alamat);
-    // const [keterangan,setKeterangan] = useState(user.admin.keterangan);
-    // const [gambar,setGambar] = useState(user.img);
+    
     const [name,setName] = useState("");
     const [nomorHP,setNomorHP] = useState("");
     const [nomorRek,setNomorRek] = useState("");

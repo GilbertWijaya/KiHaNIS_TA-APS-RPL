@@ -1,3 +1,6 @@
 .env
 node_modules
-*.rest
+request.rest
+index.js
+package.json
+package-lock.json
