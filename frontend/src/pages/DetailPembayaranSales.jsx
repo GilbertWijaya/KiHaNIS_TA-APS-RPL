@@ -72,7 +72,7 @@ const DetailPembayaranSales = () => {
                             <div className="detailpembayaran-keterangan">
                                 <p>Nama Sales : {namaSales}</p>
                                 <p>Nama Pembeli : {namaPembeli}</p>
-                                <p>Alamat</p>
+                                {/* <p>Alamat</p> */}
                                 <p>Status Pembayaran : {statusPembayaran}</p>
                                 <div className="control">
                                     <textarea name="" id="detail" value={dataBarang} className="textarea">

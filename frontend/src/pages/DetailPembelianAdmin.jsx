@@ -71,7 +71,7 @@ const DetailPembelianAdmin = () => {
                         <div className="field-detailpembelianadmin">
                             <label htmlFor="namaSales" className="label">Nama Sales</label>
                             <div className="control">
-                                <input type="text" className="input-detailpembelian" id="harga" value={namaSales} placeholder="yanto dadar" readOnly required/>
+                                <input type="text" className="input-detailpembelian" id="harga" value={namaSales} placeholder="tidak ada" readOnly required/>
                             </div>
                         </div>
 

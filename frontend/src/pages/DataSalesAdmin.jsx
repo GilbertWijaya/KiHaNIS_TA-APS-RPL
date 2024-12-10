@@ -58,7 +58,7 @@ const DataSalesAdmin = () => {
                                         <p>{sale.name}</p>
                                         <p>{sale.email}</p>
                                         <div className="action-datasales-admin">
-                                            <Link to={`/admin/editdatasales/${sale.id}`} className="btn-edit">Edit</Link>
+                                            {/* <Link to={`/admin/editdatasales/${sale.id}`} className="btn-edit">Edit</Link> */}
                                             {/* <Link to="/admin/editdatasales/:id" className="btn-delete">Delete</Link> */}
                                             <button onClick={() => deleteSales(sale.id)} className="btn-delete">Delete</button>
                                         </div>
